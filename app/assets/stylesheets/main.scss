@@ -1,3 +1,23 @@
-// Place all the styles related to the Main controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.body{
+		background-color: #1d2023;
+		h3{
+			color: #fff;
+			padding-bottom: 40px;
+		}
+	}
+
+.top-block{
+	background-image: url('http://publicdomainarchive.com/wp-content/uploads/2014/03/public-domain-images-free-stock-photos-high-quality-resolution-downloads-around-the-house-1-1000x666.jpg');
+	background-repeat: no-repeat;
+	height: 350px;
+	padding: 40px;
+	width: 100%;
+	margin-left: 12%;
+	color: #FFF;
+
+	.welcome{
+		padding-top: 40px;
+		display: block;
+		width: 400px;
+	}
+}

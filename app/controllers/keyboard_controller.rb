@@ -1,4 +1,4 @@
 class KeyboardController < ApplicationController
-	def index
+	def show
 	end
 end
