@@ -17,8 +17,37 @@
 		</div>
 	</div>
 	<div id="sign-in-popup">
+		<div>
+			<h2>Sign up!</h2>
+		<div> 
 
+		<div class="sign-up-form">
+			<%= form_tag do %>
+				<%= label_tag(:first_name, "First Name") %>
+				<%= text_field_tag(:first_name) %>
+				</br>
+				<%= label_tag(:lastt_name, "Last Name") %>
+				<%= text_field_tag(:lastt_name) %>
+				</br>
+
+				<%= label_tag(:email, "Email") %>
+				<%= text_field_tag(:email) %>
+				</br>
+
+				<%= label_tag(:password, "Password") %>
+				<%= text_field_tag(:password) %>
+				</br>
+
+				<%= label_tag(:password_confirmation, "Password Confirmation") %>
+				<%= text_field_tag(:password_confirmation) %>
+				</br>
+
+				<%= submit_tag("Submit") %>			
+			<% end %>
+
+		</div>
 		
+
 		
 
 
