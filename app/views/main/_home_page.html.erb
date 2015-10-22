@@ -1,14 +1,27 @@
 <html>
-<head> <%= link_to("Keyboard", keyboard_path) %> </head>
-
-
+<head> 
+ </head>
 <body class="body">
-	<h3 style="margin-left: 500px; postion: relative; margin-top: 47px;">Welcome to Octaves!</h3>
+	<div class="nav-bar">
+		<%= link_to("Keyboard", keyboard_path) %>
+		<div class="sign-up"><button type="button"> Sign Up </button></div>
+		<div class="log-in"><button type="button"> Log In </button> </div>
+	</div>
+	<div>
+		<h3 style="margin-left: 500px; postion: relative; margin-top: 47px;">Welcome to Octaves!</h3>
 
-	<div class="top-block">
-		<div class="welcome">
-			Octaves is an interactive keyboard for learning basic music theory. By using Octaves you can learn scales, chords, basic songs, and practice ear training and sight-reading.
+		<div class="top-block">
+			<div class="welcome">
+				Octaves is an interactive keyboard for learning basic music theory. By using Octaves you can learn scales, chords, basic songs, and practice ear training and sight-reading.
+			</div>
 		</div>
+	</div>
+	<div id="sign-in-popup">
+
+		
+		
+
+
 	</div>
  </body>
 
