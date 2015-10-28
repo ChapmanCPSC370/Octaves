@@ -1,9 +1,7 @@
 .body{
 	background-color: #1d2023;
-
 	.nav-bar{
 		width: 100%;
-
 		.log-in, .sign-up{
 			float: right;
 		}
@@ -30,20 +28,57 @@
 		}
 	}
 
-
-
 	#sign-in-popup{
 		height: 400px;
-		width: 400px;
+		width: 450px;
 		background-color: #FFF;
 		display: none;
 		position: fixed;
     top: 7%;
     left: 32%;
+		box-shadow: -2px 2px 7px 1px #aaa;
+		border-radius: 2px;
 
     h2{
-   		 margin-left: 145px;
+    	margin-top: 30px;
+    	margin-left: 158px;   		
+    	font-weight: 100;
     }
+		.sign-up-form{
+			margin-top: -10px;
+			
+	    .center{
+	    	width: 330px;
+	    	margin-left: 40px;
+	    	margin-top: 48px;
+
+	    	input[type="text"]{
+	    		margin-left: 0px;
+	    		text-align: left;
+	    		float: right;
+	    		display: inline-block;
+	    		margin-top: 9px;
+	    	}
+
+	    	label{
+	    		padding-top: 10px;
+	    		position: relative;
+	    		display: inline-block;
+	    	}
+	    }
+	    input[type="submit"]{
+	    		margin-top: 50px; 
+	    		margin-left: 125px;
+	    		padding:5px 15px; 
+	    		background:#ccc; 
+	    		border:0 none;
+    			cursor:pointer;
+    			-webkit-border-radius: 5px;
+   			  border-radius: 5px; 
+   			  color: #FFF;
+   			  background: #33ADFF;
+	    }
+	  }
 
 
 	}
