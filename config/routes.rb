@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   # Example of regular route:
     get 'keyboard/show' => 'keyboard#show', as: :keyboard
+    #post '/users/follow/:followed_type/:followed_id' => 'users#follow_this', :as => "follow"
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
@@ -16,11 +17,12 @@ Rails.application.routes.draw do
   #   resources :products
 
   # Example resource route with options:
-  #   resources :products do
-  #     member do
+     resources :user
+  # do
+       #member do
   #       get 'short'
-  #       post 'toggle'
-  #     end
+       # post 'toggle'
+      # end
   #
   #     collection do
   #       get 'sold'

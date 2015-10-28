@@ -22,13 +22,17 @@
 		<div> 
 
 		<div class="sign-up-form">
-			<%= form_tag do %>
+			<%= form_tag(users_path, :method => 'post') do %>
 			<div class="center">
 				<%= label_tag(:first_name, "First Name") %>
 				<%= text_field_tag(:first_name) %>
 				</br>
-				<%= label_tag(:lastt_name, "Last Name") %>
-				<%= text_field_tag(:lastt_name) %>
+				<%= label_tag(:last_name, "Last Name") %>
+				<%= text_field_tag(:last_name) %>
+				</br>
+
+				<%= label_tag(:username, "User Name") %>
+				<%= text_field_tag(:username) %>
 				</br>
 
 				<%= label_tag(:email, "Email") %>
@@ -36,23 +40,12 @@
 				</br>
 
 				<%= label_tag(:password, "Password") %>
-				<%= text_field_tag(:password) %>
-				</br>
-
-				<%= label_tag(:password_confirmation, "Password Confirmation") %>
-				<%= text_field_tag(:password_confirmation) %>
+				<%= password_field_tag(:password) %>
 				</br>
 			<div>
-				<%= submit_tag("Submit") %>	
-					
+				<%= submit_tag("Submit") %>		
 			<% end %>
-
 		</div>
-		
-
-		
-
-
 	</div>
  </body>
 
