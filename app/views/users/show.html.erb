@@ -1,4 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="header">
+	<div class="nav-bar">
+		<%= link_to("Keyboard", keyboard_path) %>
+		<%= link_to("Home", root_path) %>
+		<h2> Welcome <%= @user.first_name %>! <h2>
+	</div>
+</div>
+
+
