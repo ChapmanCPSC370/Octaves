@@ -4,22 +4,24 @@
 <body class="body">
 	<div class="nav-bar">
 		<%= link_to("Keyboard", keyboard_path) %>
-		<div class="sign-up"><button type="button"> Sign Up </button></div>
-		<div class="log-in"><button type="button"> Log In </button> </div>
+		
 	</div>
 	<div>
 		<h3 style="margin-left: 500px; postion: relative; margin-top: 47px;">Welcome to Octaves!</h3>
 
 		<div class="top-block">
-			<div class="welcome">
-				Octaves is an interactive keyboard for learning basic music theory. By using Octaves you can learn scales, chords, basic songs, and practice ear training and sight-reading.
-			</div>
+			<button type="button" class="sign-up"> Sign Up </button>
+		    <button type="button" class="log-in"> Log In </button>
 		</div>
 	</div>
+    <div class="welcome">
+      Octaves is an interactive keyboard for learning basic music theory. By using Octaves you can learn scales, chords, basic songs, and practice ear training and sight-reading.
+    </div>
 	<div id="sign-in-popup">
 		<div>
 			<h2>Sign up</h2>
-		<div> 
+          <div class="close-popup">X</div>
+        </div> 
 
 		<div class="sign-up-form">
 			<%= render "users/form" %>

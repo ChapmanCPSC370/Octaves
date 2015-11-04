@@ -2,9 +2,6 @@
 	background-color: #1d2023;
 	.nav-bar{
 		width: 100%;
-		.log-in, .sign-up{
-			float: right;
-		}
 	}
 		h3{
 			color: #fff;
@@ -13,31 +10,58 @@
 	
 
 	.top-block{
-		background-image: url('http://publicdomainarchive.com/wp-content/uploads/2014/03/public-domain-images-free-stock-photos-high-quality-resolution-downloads-around-the-house-1-1000x666.jpg');
+		/*background-image: url('http://publicdomainarchive.com/wp-content/uploads/2014/03/public-domain-images-free-stock-photos-high-quality-resolution-downloads-around-the-house-1-1000x666.jpg');*/
 		background-repeat: no-repeat;
 		height: 350px;
 		padding: 40px;
 		width: 100%;
 		margin-left: 12%;
 		color: #FFF;
+      
+      .sign-up, .log-in{
+        background: none;
+        border: thin solid #0077B3;
+        height: 53px;
+        width: 184px;
+        position: absolute;
+        left: 30%;
+        color: #0077B3;
+        
+      }
+      .log-in{
+            left: 50%;
+      }
 
-		.welcome{
-			padding-top: 40px;
-			display: block;
-			width: 400px;
-		}
+		
 	}
-
-	#sign-in-popup{
+.welcome{
+  padding-top: 40px;
+  display: block;
+  width: 400px;
+  color: white;
+}
+#sign-in-popup{
 		height: 400px;
 		width: 450px;
 		background-color: #FFF;
 		display: none;
 		position: fixed;
-    top: 7%;
-    left: 32%;
+        top: 7%;
+        left: 32%;
 		box-shadow: -2px 2px 7px 1px #aaa;
 		border-radius: 2px;
+  
+  .close-popup{
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    font-family: helvetica;
+    position: absolute;
+  }
+  
+  .close-popup:hover{
+    cursor: pointer;
+  }
 
     h2{
     	margin-top: 30px;
