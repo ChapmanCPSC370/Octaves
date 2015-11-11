@@ -22,13 +22,14 @@
 	<option class="mode" value="natural-minor">Natural Minor</option>
 	<option class="mode" value="harmonic-minor">Harmonic Minor</option>
 	<option class="mode" value="melodic-minor">Melodic Minor</option>
-
+	<option class="mode" value="pentatonic-blues">Pentatonic Blues</option>
 
 </select>
 <button class="play-scale"> Play Scale</button>
 <div class="keyboard-background">
 	<div class="white-key" data-key-number= 0 style="display:none;" data-note="b3"> </div>
 	<div class="white-key" data-key-number= 1 data-note="c4"> </div>
+	<%= audio_tag("c_note.wav", class: "c-note") %>
 	<div class="black-key" data-key-number= 2 data-note="c#4"> </div>
 	<div class="white-key" data-key-number= 3 data-note="d4"> </div>
 	<div class="black-key" data-key-number= 4 data-note="d#4"> </div>
