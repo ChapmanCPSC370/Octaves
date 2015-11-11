@@ -2,62 +2,87 @@
 //= require jquery-ui
 $(function(){
 	var major = ['w', 'w', 'h', 'w', 'w', 'w', 'h'];
-	var minor = ['w', 'h', 'w', 'w', 'h', 'w', 'w'];
+	var naturalMinor = ['w', 'h', 'w', 'w', 'h', 'w', 'w'];
+	var harmonicMinor = ['w', 'h', 'w', 'w', 'h', 'w#', 'w'];
+	var melodicMinor = ['w', 'h', 'w', 'w', 'w', 'w', 'h'];
+
 	$(document).on('click', '.play-scale', function(){
 		var rootNote = $('.scale-choice').find(":selected").val();
-		var endValue = rootNote.slice(-1);
-		var endNote = rootNote.slice(0, - 1); 
-		var temp = parseInt(endValue);
-		temp += 1
-		endNote = endNote + temp.toString();
-
-		var mode = $(".mode");
-		mode = "major";
+		var rootNumber = $("[data-note= '" + rootNote + "']").data("key-number");
+		var mode = $('.mode-choice').find(":selected").val();
 		var delay = 0;
-		var before = $( "[data-note='" + rootNote + "']" ).prev();
-		var after = $("[data-note='" + endNote + "']").next()
-
+		var number = rootNumber;
 
 		if(mode == "major"){
-			$(before).nextUntil(after).each(function(index, div){
-				if(index == 0){
-					play(div, delay);
-					delay += 1
-
-				}
-				else if(index == 2){
-					play(div, delay);
-					delay += 1
-				}
-				else if(index == 4){
-					play(div, delay);
-					delay += 1
-				}
-				else if(index == 5){
-					play(div, delay);
-					delay += 1
+			for(var i = 0; i < major.length; i++){
+				if (number == rootNumber){
+				  play($("[data-key-number= '" + rootNumber + "']"), delay);
+					delay += 1;
 				}
 
-				else if(index == 7){
-					play(div, delay);
-					delay += 1
+				if(major[i] == "w"){
+					number = number + 2;
 				}
-				else if(index == 9){
-					play(div, delay);
-					delay += 1
+				else{
+					number += 1;
 				}
-				else if(index == 11){
-					play(div, delay);
-					delay += 1
-				}
-				else if(index == 12){
-					play(div, delay);
-					delay += 1
-				}
-			});
+				play($("[data-key-number= '" + number + "']"), delay);
+				delay += 1;
+			}
 		}
-		else if(mode == "minor"){
+		else if(mode == "natural-minor"){
+			for(var i = 0; i < naturalMinor.length; i++){
+				if (number == rootNumber){
+				  play($("[data-key-number= '" + rootNumber + "']"), delay);
+					delay += 1;
+				}
+				if(naturalMinor[i] == "w"){
+					number = number + 2;
+				}
+				else{
+					number += 1;
+				}
+				play($("[data-key-number= '" + number + "']"), delay);
+				delay += 1;
+			}
 		}
+		else if(mode == "harmonic-minor"){
+			for(var i = 0; i < harmonicMinor.length; i++){
+				if (number == rootNumber){
+				  play($("[data-key-number= '" + rootNumber + "']"), delay);
+					delay += 1;
+				}
+
+				if(harmonicMinor[i] == "w"){
+					number = number + 2;
+				}
+				else if(harmonicMinor[i] == "h"){
+					number += 1;
+				}
+				else{
+					number += 3;
+				}
+				play($("[data-key-number= '" + number + "']"), delay);
+				delay += 1;
+			}
+		}
+		else if(mode == "melodic-minor"){
+			for(var i = 0; i < melodicMinor.length; i++){
+				if (number == rootNumber){
+				  play($("[data-key-number= '" + rootNumber + "']"), delay);
+					delay += 1;
+				}
+
+				if(melodicMinor[i] == "w"){
+					number = number + 2;
+				}
+				else if(melodicMinor[i] == "h"){
+					number += 1;
+				}
+				play($("[data-key-number= '" + number + "']"), delay);
+				delay += 1;
+			}
+		}	
 	});
 
 	function play(div, delay){
