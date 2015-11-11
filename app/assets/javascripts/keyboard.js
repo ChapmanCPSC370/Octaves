@@ -5,7 +5,8 @@ $(function(){
 	var naturalMinor = ['w', 'h', 'w', 'w', 'h', 'w', 'w'];
 	var harmonicMinor = ['w', 'h', 'w', 'w', 'h', 'w#', 'w'];
 	var melodicMinor = ['w', 'h', 'w', 'w', 'w', 'w', 'h'];
-	var pentatonicBlues = ['w#', 'w', 'h', 'h', 'w#', 'w']
+	var pentatonicBlues = ['w#', 'w', 'h', 'h', 'w#', 'w'];
+	var majorPentatonicBlues = ['w', 'h', 'h', 'w#', 'w', 'w#'];
 
 	$(document).on('click', '.play-scale', function(){
 		var rootNote = $('.scale-choice').find(":selected").val();
@@ -29,6 +30,9 @@ $(function(){
 		}
 		else if(mode == "pentatonic-blues"){
 			playScale(pentatonicBlues, rootNumber, delay);
+		}
+		else if(mode == "major-pentatonic-blues"){
+			playScale(majorPentatonicBlues, rootNumber, delay); 
 		}
 	});
 
