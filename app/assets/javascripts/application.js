@@ -1,4 +1,7 @@
 //= require jquery
+//=require _general
+//= require howler
+//= require _zepto.min.js
 //= require fancybox
 //= require jquery-ui
 //= require jquery_ujs
