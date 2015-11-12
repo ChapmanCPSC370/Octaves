@@ -3,10 +3,12 @@
 $(function(){
 	var major = ['w', 'w', 'h', 'w', 'w', 'w', 'h'];
 	var naturalMinor = ['w', 'h', 'w', 'w', 'h', 'w', 'w'];
-	var harmonicMinor = ['w', 'h', 'w', 'w', 'h', 'w#', 'w'];
+	var harmonicMinor = ['w', 'h', 'w', 'w', 'h', 'w#', 'h'];
 	var melodicMinor = ['w', 'h', 'w', 'w', 'w', 'w', 'h'];
-	var pentatonicBlues = ['w#', 'w', 'h', 'h', 'w#', 'w'];
+	var minorPentatonicBlues = ['w#', 'w', 'h', 'h', 'w#', 'w'];
 	var majorPentatonicBlues = ['w', 'h', 'h', 'w#', 'w', 'w#'];
+	var majorPentatonic = ['w','w','w#','w','w#'];
+	var minorPentatonic = ['w#','w','w','w#','w'];
 
 	$(document).on('click', '.play-scale', function(){
 		var rootNote = $('.scale-choice').find(":selected").val();
@@ -14,11 +16,40 @@ $(function(){
 		var mode = $('.mode-choice').find(":selected").val();
 		var delay = 0;
 
-		if(mode == "major"){
-			playScale(major, rootNumber, delay);
+		switch(mode){
+			case "major": 
+				playScale(major, rootNumber, delay);
+				break;
+			
+			case "natural-minor":
+				playScale(naturalMinor, rootNumber, delay);
+				break;
+			case "harmonic-minor":
+				playScale(harmonicMinor, rootNumber, delay);
+				break;
+			case "melodic-minor":
+				playScale(melodicMinor, rootNumber, delay);
+				break;
+			case "natural-minor":
+				playScale(naturalMinor, rootNumber, delay);
+				break;
+			case "minor-pentatonic-blues":
+				playScale(minorPentatonicBlues, rootNumber, delay);
+				break;
+			case "major-pentatonic-blues":
+				playScale(majorPentatonicBlues, rootNumber, delay);
+				break;
+			case "major-pentatonic":
+				playScale(majorPentatonic, rootNumber, delay);
+				break;
+			case "minor-pentatonic":
+				playScale(minorPentatonic, rootNumber, delay);
+				break;
 		}
-		else if(mode == "natural-minor"){
-			playScale(naturalMinor, rootNumber, delay);
+
+	//	if(mode == "major"){
+	//	}
+		/*if(mode == "natural-minor"){
 
 		}
 		else if(mode == "harmonic-minor"){
@@ -28,12 +59,12 @@ $(function(){
 			playScale(melodicMinor, rootNumber, delay);
 
 		}
-		else if(mode == "pentatonic-blues"){
-			playScale(pentatonicBlues, rootNumber, delay);
+		else if(mode == "minor-pentatonic-blues"){
+			playScale(minorPentatonicBlues, rootNumber, delay);
 		}
 		else if(mode == "major-pentatonic-blues"){
 			playScale(majorPentatonicBlues, rootNumber, delay); 
-		}
+		}*/
 	});
 
 	function playScale(scale, root, delay){
