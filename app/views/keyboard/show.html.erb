@@ -1,35 +1,59 @@
 <html>
 <head>  <%= link_to("Home", root_path) %> </head>
-
-
 <body>
-<select class="scale-choice" data-value=''>
-  <option class="scale" value="1C">C</option>
-  <option class="scale" value="1Cs">C#</option>
-  <option class="scale" value="1D">D</option>
-  <option class="scale" value="1Ds">D#</option>
-  <option class="scale" value="1E">E</option>
-  <option class="scale" value="1F">F</option>
-  <option class="scale" value="1Fs">F#</option>
-  <option class="scale" value="1G">G</option>
-  <option class="scale" value="1Gs">G#</option>
-  <option class="scale" value="2A">A</option>
-  <option class="scale" value="2As">A#</option>
-  <option class="scale" value="2B">B</option>
-</select>
-<select class="mode-choice">
-	<option class="mode" value="major">Major</option>
-	<option class="mode" value="natural-minor">Natural Minor</option>
-	<option class="mode" value="harmonic-minor">Harmonic Minor</option>
-	<option class="mode" value="melodic-minor">Melodic Minor</option>
-	<option class="mode" value="minor-pentatonic-blues">Minor Pentatonic Blues</option>
-	<option class="mode" value="major-pentatonic-blues">Major Pentatonic Blues</option>
-	<option class="mode" value="major-pentatonic">Major Pentatonic</option>
-	<option class="mode" value="minor-pentatonic">Minor Pentatonic</option>
+<div>
+  <select class="scale-choice" data-value=''>
+    <option class="scale" value="1C">C</option>
+    <option class="scale" value="1Cs">C#</option>
+    <option class="scale" value="1D">D</option>
+    <option class="scale" value="1Ds">D#</option>
+    <option class="scale" value="1E">E</option>
+    <option class="scale" value="1F">F</option>
+    <option class="scale" value="1Fs">F#</option>
+    <option class="scale" value="1G">G</option>
+    <option class="scale" value="1Gs">G#</option>
+    <option class="scale" value="2A">A</option>
+    <option class="scale" value="2As">A#</option>
+    <option class="scale" value="2B">B</option>
+  </select>
+  <select class="mode-choice">
+  	<option class="mode" value="major">Major</option>
+  	<option class="mode" value="natural-minor">Natural Minor</option>
+  	<option class="mode" value="harmonic-minor">Harmonic Minor</option>
+  	<option class="mode" value="melodic-minor">Melodic Minor</option>
+  	<option class="mode" value="minor-pentatonic-blues">Minor Pentatonic Blues</option>
+  	<option class="mode" value="major-pentatonic-blues">Major Pentatonic Blues</option>
+  	<option class="mode" value="major-pentatonic">Major Pentatonic</option>
+  	<option class="mode" value="minor-pentatonic">Minor Pentatonic</option>
+  </select>
+  <button class="play-scale"> Play Scale</button>
+</div>
+
+<div>
+
+  <select class="chord-value" data-value=''>
+    <option class="chord-value" value="1C">C</option>
+    <option class="chord-value" value="1Cs">C#</option>
+    <option class="chord-value" value="1D">D</option>
+    <option class="chord-value" value="1Ds">D#</option>
+    <option class="chord-value" value="1E">E</option>
+    <option class="chord-value" value="1F">F</option>
+    <option class="chord-value" value="1Fs">F#</option>
+    <option class="chord-value" value="1G">G</option>
+    <option class="chord-value" value="1Gs">G#</option>
+    <option class="chord-value" value="2A">A</option>
+    <option class="chord-value" value="2As">A#</option>
+    <option class="chord-value" value="2B">B</option>
+  </select>
+
+  <select class="chord-choice">
+    <option class="chord" value="major">Major</option>
+    <option class="chord" value="minor">Minor</option>  
+  </select>
+  <button class="play-chord"> Play Chord</button>
+</div>
 
 
-</select>
-<button class="play-scale"> Play Scale</button>
 <div class="keyboard-background">
 	 <ul class="piano">
     <li class="key">

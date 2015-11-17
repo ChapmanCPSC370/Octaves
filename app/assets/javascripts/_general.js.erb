@@ -55,6 +55,9 @@ $(function(){
           if (number == root){
             play($("[data-key= '" + root + "']"), delay);
               delay += 1;
+            //$("[data-key= '" + root + "']").removeClass('red');    
+         //$("[data-key= '" + number + "']").toggleClass('red'); 
+
           }
 
           if(scale[i] == "w"){
@@ -71,16 +74,21 @@ $(function(){
       }
   }
   function play(div, delay){
-
-  setTimeout(function() { 
-    var noteClick = $(div).attr('data-note');
-    notes[noteClick].play();
-    div.addClass('red');
+    setTimeout(function() { 
+      var noteClick = $(div).attr('data-note');
+      notes[noteClick].play();
+      div.toggleClass('red');
     }, delay*700);
-    div.removeClass('red');      
-  }
 
-	//
+   setTimeout(
+    function() 
+    {
+      //delay = delay + 1;
+      div.toggleClass('red');
+
+      console.log(delay);
+   }, delay*825);
+
 	// Variables
 	// --------------------------------------------------
 
