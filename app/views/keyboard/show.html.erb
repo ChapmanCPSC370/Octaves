@@ -4,18 +4,18 @@
 
 <body>
 <select class="scale-choice" data-value=''>
-  <option class="scale" value="c4">C</option>
-  <option class="scale" value="c#4">C#</option>
-  <option class="scale" value="d4">D</option>
-  <option class="scale" value="d#4">D#</option>
-  <option class="scale" value="e4">E</option>
-  <option class="scale" value="f4">F</option>
-  <option class="scale" value="f#4">F#</option>
-  <option class="scale" value="g4">G</option>
-  <option class="scale" value="g#4">G#</option>
-  <option class="scale" value="a4">A</option>
-  <option class="scale" value="a#4">A#</option>
-  <option class="scale" value="b4">B</option>
+  <option class="scale" value="1C">C</option>
+  <option class="scale" value="1Cs">C#</option>
+  <option class="scale" value="1D">D</option>
+  <option class="scale" value="1Ds">D#</option>
+  <option class="scale" value="1E">E</option>
+  <option class="scale" value="1F">F</option>
+  <option class="scale" value="1Fs">F#</option>
+  <option class="scale" value="1G">G</option>
+  <option class="scale" value="1Gs">G#</option>
+  <option class="scale" value="2A">A</option>
+  <option class="scale" value="2As">A#</option>
+  <option class="scale" value="2B">B</option>
 </select>
 <select class="mode-choice">
 	<option class="mode" value="major">Major</option>
@@ -31,91 +31,60 @@
 </select>
 <button class="play-scale"> Play Scale</button>
 <div class="keyboard-background">
-
-
 	 <ul class="piano">
     <li class="key">
-      <span class="white-key" data-key="20" data-note="1C"></span>
-      <span class="black-key" data-key="81" data-note="1Cs"></span>
+      <div class="white-key" data-key="0" data-note="1C"></div>
+      <div class="black-key" data-key="1" data-note="1Cs"></div>
     </li>
     <li class="key">
-      <span class="white-key" data-key="65" data-note="1D"></span>
-      <span class="black-key" data-key="87" data-note="1Ds"></span>
+      <div class="white-key" data-key="2" data-note="1D"></div>
+      <div class="black-key" data-key="3" data-note="1Ds"></div>
     </li>
     <li class="key">
-      <span class="white-key" data-key="83" data-note="1E"></span>
+      <div class="white-key" data-key="4" data-note="1E"></div>
     </li>
     <li class="key">
-      <span class="white-key" data-key="68" data-note="1F"></span>
-      <span class="black-key" data-key="82" data-note="1Fs"></span>
+      <div class="white-key" data-key="5" data-note="1F"></div>
+      <div class="black-key" data-key="6" data-note="1Fs"></div>
     </li>
     <li class="key">
-      <span class="white-key" data-key="70" data-note="1G"></span>
-      <span class="black-key" data-key="84" data-note="1Gs"></span>
+      <div class="white-key" data-key="7" data-note="1G"></div>
+      <div class="black-key" data-key="8" data-note="1Gs"></div>
     </li>
     <li class="key">
-      <span class="white-key" data-key="71" data-note="2A"></span>
-      <span class="black-key" data-key="89" data-note="2As"></span>
+      <div class="white-key" data-key="9" data-note="2A"></div>
+      <div class="black-key" data-key="10" data-note="2As"></div>
     </li>
     <li class="key">
-      <span class="white-key" data-key="72" data-note="2B"></span>
+      <div class="white-key" data-key="11" data-note="2B"></div>
     </li>
     <li class="key">
-      <span class="white-key" data-key="74" data-note="2C"></span>
-      <span class="black-key" data-key="73" data-note="2Cs"></span>
+      <div class="white-key" data-key="12" data-note="2C"></div>
+      <div class="black-key" data-key="13" data-note="2Cs"></div>
     </li>
     <li class="key">
-      <span class="white-key" data-key="75" data-note="2D"></span>
-      <span class="black-key" data-key="79" data-note="2Ds"></span>
+      <div class="white-key" data-key="14" data-note="2D"></div>
+      <div class="black-key" data-key="15" data-note="2Ds"></div>
     </li>
     <li class="key">
-      <span class="white-key" data-key="76" data-note="2E"></span>
+      <div class="white-key" data-key="16" data-note="2E"></div>
     </li>
     <li class="key">
-      <span class="white-key" data-key="186" data-note="2F"></span>
-      <span class="black-key" data-key="219" data-note="2Fs"></span>
+      <div class="white-key" data-key="17" data-note="2F"></div>
+      <div class="black-key" data-key="18" data-note="2Fs"></div>
     </li>
     <li class="key">
-      <span class="white-key" data-key="222" data-note="2G"></span>
-      <span class="black-key" data-key="221" data-note="2Gs"></span>
+      <div class="white-key" data-key="19" data-note="2G"></div>
+      <div class="black-key" data-key="20" data-note="2Gs"></div>
     </li>
     <li class="key">
-      <span class="white-key" data-key="220" data-note="3A"></span>
-      <span class="black-key" data-key="13" data-note="3As"></span>
+      <div class="white-key" data-key="21" data-note="3A"></div>
+      <div class="black-key" data-key="22" data-note="3As"></div>
     </li>
     <li class="key">
-      <span class="white-key" data-key="37" data-note="3B"></span>
+      <div class="white-key" data-key="23" data-note="3B"></div>
     </li>
   </ul>
-  
-	<div class="white-key" data-key-number= 0 style="display:none;" data-note="b3"> </div>
-	<div class="white-key" data-key-number= 1 data-note="c4"> </div>
-	<%= audio_tag("c_note.wav", class: "c-note") %>
-	<div class="black-key" data-key-number= 2 data-note="c#4"> </div>
-	<div class="white-key" data-key-number= 3 data-note="d4"> </div>
-	<div class="black-key" data-key-number= 4 data-note="d#4"> </div>
-	<div class="white-key" data-key-number= 5 data-note="e4"> </div>
-	<div class="white-key" data-key-number= 6 data-note="f4"> </div>
-	<div class="black-key" data-key-number= 7 data-note="f#4"> </div>
-	<div class="white-key" data-key-number= 8 data-note="g4"> </div>
-	<div class="black-key" data-key-number= 9 data-note="g#4"> </div>
-	<div class="white-key" data-key-number= 10 data-note="a4"> </div>
-	<div class="black-key" data-key-number= 11 data-note="a#4"> </div>
-	<div class="white-key" data-key-number= 12 data-note="b4"> </div>
-	<div class="white-key" data-key-number= 13 data-note="c5"> </div>
-	<div class="black-key" data-key-number= 14 data-note="c#6"> </div>
-	<div class="white-key" data-key-number= 15 data-note="d6"> </div>
-	<div class="black-key" data-key-number= 16 data-note="d#6"> </div>
-	<div class="white-key" data-key-number= 17 data-note="e6"> </div>
-	<div class="white-key" data-key-number= 18 data-note="f6"> </div>
-	<div class="black-key" data-key-number= 19 data-note="f#6"> </div>
-	<div class="white-key" data-key-number= 20 data-note="g6"> </div>
-	<div class="black-key" data-key-number= 21 data-note="g#6"> </div>
-	<div class="white-key" data-key-number= 22 data-note="a6"> </div>
-	<div class="black-key" data-key-number= 23 data-note="a#6"> </div>
-	<div class="white-key" data-key-number= 24 data-note="b6"> </div>
-	<div class="white-key" data-key-number= 25 data-note="c7"> </div>	
-</div> 
  </body>
 
 </html>

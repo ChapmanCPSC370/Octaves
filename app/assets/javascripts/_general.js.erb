@@ -1,0 +1,208 @@
+//=require howler
+//= require jquery
+//= require jquery-ui
+$(function(){
+  var major = ['w', 'w', 'h', 'w', 'w', 'w', 'h'];
+  var naturalMinor = ['w', 'h', 'w', 'w', 'h', 'w', 'w'];
+  var harmonicMinor = ['w', 'h', 'w', 'w', 'h', 'w#', 'h'];
+  var melodicMinor = ['w', 'h', 'w', 'w', 'w', 'w', 'h'];
+  var minorPentatonicBlues = ['w#', 'w', 'h', 'h', 'w#', 'w'];
+  var majorPentatonicBlues = ['w', 'h', 'h', 'w#', 'w', 'w#'];
+  var majorPentatonic = ['w','w','w#','w','w#'];
+  var minorPentatonic = ['w#','w','w','w#','w'];
+
+  $(document).on('click', '.play-scale', function(){
+      var rootNote = $('.scale-choice').find(":selected").val();
+      var rootNumber = $("[data-note= '" + rootNote + "']").data("key");
+      var mode = $('.mode-choice').find(":selected").val();
+      var delay = 0;
+
+      switch(mode){
+          case "major": 
+              playScale(major, rootNumber, delay);
+              break;
+          
+          case "natural-minor":
+              playScale(naturalMinor, rootNumber, delay);
+              break;
+          case "harmonic-minor":
+              playScale(harmonicMinor, rootNumber, delay);
+              break;
+          case "melodic-minor":
+              playScale(melodicMinor, rootNumber, delay);
+              break;
+          case "natural-minor":
+              playScale(naturalMinor, rootNumber, delay);
+              break;
+          case "minor-pentatonic-blues":
+              playScale(minorPentatonicBlues, rootNumber, delay);
+              break;
+          case "major-pentatonic-blues":
+              playScale(majorPentatonicBlues, rootNumber, delay);
+              break;
+          case "major-pentatonic":
+              playScale(majorPentatonic, rootNumber, delay);
+              break;
+          case "minor-pentatonic":
+              playScale(minorPentatonic, rootNumber, delay);
+              break;
+      }
+  });
+
+  function playScale(scale, root, delay){
+      var number = root;
+      for(var i = 0; i < scale.length; i++){
+          if (number == root){
+            play($("[data-key= '" + root + "']"), delay);
+              delay += 1;
+          }
+
+          if(scale[i] == "w"){
+              number = number + 2;
+          }
+          else if(scale[i] == "h"){
+              number += 1;
+          }
+          else{
+              number += 3;
+          }
+          play($("[data-key= '" + number + "']"), delay);
+          delay += 1;
+      }
+  }
+  function play(div, delay){
+
+  setTimeout(function() { 
+    var noteClick = $(div).attr('data-note');
+    notes[noteClick].play();
+    div.addClass('red');
+    }, delay*700);
+    div.removeClass('red');      
+  }
+
+	//
+	// Variables
+	// --------------------------------------------------
+
+  // Notes variables
+	var notes = {
+    "1C": new Howl({
+        urls: ["<%= asset_path('261-C.mp3') %>"]
+    }),
+    "1Cs": new Howl({
+        urls: [ "<%= asset_path('277-C-sharp.mp3') %>" ]
+    }),
+    "1D": new Howl({
+        urls: [ "<%= asset_path('293-D.mp3') %>" ]
+    }),
+    "1Ds": new Howl({
+        urls: [ "<%= asset_path('311-D-sharp.mp3') %>" ]
+    }),
+    "1E": new Howl({
+        urls: [ "<%= asset_path('329-E.mp3') %>" ]
+    }),
+    "1F": new Howl({
+        urls: [ "<%= asset_path('349-F.mp3') %>" ]
+    }),
+    "1Fs": new Howl({
+        urls: [ "<%= asset_path('369F-sharp.mp3') %>" ]
+    }),
+    "1G": new Howl({
+        urls: [ "<%= asset_path('391-G.mp3') %>" ]
+    }),
+    "1Gs": new Howl({
+        urls: [ "<%= asset_path('415-G-sharp.mp3') %>" ]
+    }),
+    "2A": new Howl({
+        urls: [ "<%= asset_path('440-A.mp3') %>" ]
+    }),
+    "2As": new Howl({
+        urls: [ "<%= asset_path('466-A-sharp.mp3') %>" ]
+    }),
+    "2B": new Howl({
+        urls: [ "<%= asset_path('495-B.mp3') %>"  ]
+    }),
+    "2C": new Howl({
+        urls: [ "<%= asset_path('523-C.mp3') %>" ]
+    }),
+    "2Cs": new Howl({
+        urls: [ "<%= asset_path('545-C-sharp.mp3') %>" ]
+    }),
+    "2D": new Howl({
+        urls: [ "<%= asset_path('587-D.mp3') %>" ]
+    }),
+    "2Ds": new Howl({
+        urls: [ "<%= asset_path('622-D-sharp.mp3') %>" ]
+    }),
+    "2E": new Howl({
+        urls: [ "<%= asset_path('659-E.mp3') %>" ]
+    }),
+    "2F": new Howl({
+        urls: [ "<%= asset_path('698-F.mp3') %>" ]
+    }),
+    "2Fs": new Howl({
+        urls: [ "<%= asset_path('698-F-sharp.mp3') %>" ]
+    }),
+    "2G": new Howl({
+        urls: [ "<%= asset_path('783-G.mp3') %>" ]
+    }),
+    "2Gs": new Howl({
+        urls: [ "<%= asset_path('830-G-sharp.mp3') %>" ]
+    }),
+    "3A": new Howl({
+        urls: [ "<%= asset_path('880-A.mp3') %>" ]
+    }),
+    "3As": new Howl({
+        urls: [ "<%= asset_path('932-A-sharp.mp3') %>" ]
+    }),
+    "3B": new Howl({
+        urls: [ "<%= asset_path('987-B.mp3') %>" ]
+    })
+	};
+
+	// Lock event for play
+	var lockEvent = {};
+
+	//
+	// Events
+	// --------------------------------------------------
+
+	// Disable Select
+	// --------------------------------------------------
+	$('.piano').bind('selectstart dragstart', function(ev) {
+	  ev.preventDefault();
+	  return false;
+	});
+
+	// Piano Play Keyboard
+    // --------------------------------------------------
+	$(window).bind('keydown keyup', function(ev) {
+		var keyNo = ev.which;
+        var $key = $('[data-key="'+keyNo+'"]');
+        var note = $key.attr('data-note');
+		if(note){
+			if (ev.type == 'keydown') {
+				if (!lockEvent[keyNo]) {
+					notes[note].play();
+					lockEvent[keyNo] = true;
+					$key.addClass('active');
+					$key.parent().addClass('active');
+		 		}
+			}
+			else if (ev.type == 'keyup') {
+				lockEvent[keyNo] = false;
+				$key.removeClass('active');
+				$key.parent().removeClass('active');
+			}
+		}
+	});
+
+	// Piano Play Click
+  // --------------------------------------------------
+	$(document).on('click','.key > div', function(){
+		var me = $(this);
+		var noteClick = me.attr('data-note');
+    notes[noteClick].play();
+	});
+});
+
