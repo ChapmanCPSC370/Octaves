@@ -93,9 +93,35 @@ $(function(){
       }
   });
 
-  $(document).on('click', 'listen', function(){
-    var chord = ["majorTriad", "minorTriad", "dominant7th", "major7th"]
+  $(document).on('click', '.listen', function(){
+    var chord = ["major", "minor", "dominant7th", "major7th"];
+    var root = ["1C", "1Cs", "1D", "1Ds", "1E", "1Fs", "1G", "1Gs", "2A", "2As", "2B"];
+    var randomChord = getRandomInt(0,4);
+    var randomRoot = getRandomInt(0, 11);
+
+    //console.log(chord[randomChord]);
     
+
+    var rootNumber = $("[data-note= '" + root[randomRoot] + "']").data("key"); 
+    //console.log(rootDiv);
+    switch(chord[randomChord]){
+      case "major":
+        playChord(majorTriad, rootNumber, 0);
+        break;
+      case "minor":
+        playChord(minorTriad, rootNumber, 0);
+        break;
+      case "dominant7th":
+        playChord(dominant7th, rootNumber, 0);
+        break;
+       case "major7th":
+        playChord(major7th, rootNumber, 0);
+        break;
+    }
+
+   // playChord(chord[randomChord], rootDiv, 0);
+
+
 
 
   });
@@ -303,3 +329,7 @@ $(function(){
     notes[noteClick].play();
 	});
 });
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
