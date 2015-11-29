@@ -1,6 +1,59 @@
 // Piano
 // --------------------------------------------------
+.buttons{
+  top: 10%;
+  background: none;
+  border: thin solid #0077B3;
+  height: 53px;
+  width: 184px;
+  position: absolute;
+  left: 30%;
+  color: #0077B3;
+}
 
+
+.learn-scales, .learn-chords{
+  width: 472px;
+  height: 200px;
+  border: thin solid #eee;
+  display: none;
+  left: 29%;
+  position: absolute;
+
+  .scale-choices{
+    .buttons{
+      left: 0px;
+      margin-top: 50px;
+      margin-left: 20px;
+    }
+  }
+
+  .choices{
+    padding-left: 120px;
+    padding-top: 40px;
+
+    .scale-choice{ 
+      width: 100px;
+    }
+    .mode-choice{
+      width: 200px;
+    }
+
+    
+  }
+  .play-scale{
+      margin-left: 120px;
+      margin-top: 50px;
+      display: none;
+  }
+}
+
+.keyboard-background{
+  position: absolute;
+  width: 1400px;
+  top: 55%;
+  left: 8%;
+}
 .piano{
   background: -webkit-linear-gradient(-65deg, #000, #222, #000, #666, #222 75%);
   background: -moz-linear-gradient(-65deg, #000, #222, #000, #666, #222 75%);

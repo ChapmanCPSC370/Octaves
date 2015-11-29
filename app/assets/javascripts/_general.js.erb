@@ -2,6 +2,29 @@
 //= require jquery
 //= require jquery-ui
 $(function(){
+
+  $(document).on('click', '#scale', function(){
+    $(".first").fadeOut();
+    $( ".learn-scales" ).slideDown( "slow", function() {
+    });
+  });
+
+  $(document).on('click', '#chord', function(){
+    $(".buttons").fadeOut();
+  });
+
+  $(document).on('click', '.back', function(){
+    $(this).parent().slideUp("slow", function() {
+    });
+    $(".buttons").fadeIn();
+  });
+
+  $(document).on('click', '#play-scale-button', function(){
+    $(".play-scale").fadeIn();
+    $(".buttons").fadeOut();
+  });
+
+
   var major = ['w', 'w', 'h', 'w', 'w', 'w', 'h'];
   var naturalMinor = ['w', 'h', 'w', 'w', 'h', 'w', 'w'];
   var harmonicMinor = ['w', 'h', 'w', 'w', 'h', 'w#', 'h'];
