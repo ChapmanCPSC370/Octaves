@@ -42,18 +42,37 @@
     <button class="play-scale"> Play Scale</button>
     <button class="back"> Back</button>
   </div> 
-  <div>
-
-    
-
-
-  </div>
 </div>
 
 <div class="learn-chords">
   <div class="chord-choices">
     <button type="button" class="buttons" id="play-chord-button"> Play Chords </button>
     <button type="button" class="buttons" id="chord-identification" style="left: 50%;"> Chord Identification </button>
+  </div>
+  <div class="play-chord-id" style="display: none;">
+    <select class="chord-value" data-value=''>
+      <option class="chord-root" value="1C">C</option>
+      <option class="chord-root" value="1Cs">C#</option>
+      <option class="chord-root" value="1D">D</option>
+      <option class="chord-root" value="1Ds">D#</option>
+      <option class="chord-root" value="1E">E</option>
+      <option class="chord-root" value="1F">F</option>
+      <option class="chord-root" value="1Fs">F#</option>
+      <option class="chord-root" value="1G">G</option>
+      <option class="chord-root" value="1Gs">G#</option>
+      <option class="chord-root" value="2A">A</option>
+      <option class="chord-root" value="2As">A#</option>
+      <option class="chord-root" value="2B">B</option>
+    </select>
+
+    <select class="chord-choice">
+      <option class="chord" value="major">Major</option>
+      <option class="chord" value="minor">Minor</option>
+      <option class="chord" value="dominant7th">Dominant 7th</option>
+      <option class="chord" value="major7th">Major 7th</option>      
+    </select>
+
+    <button type="button" class="buttons listen">Listen</button>
   </div>
   <div class='play-chord' style="display:none;">
     <div>

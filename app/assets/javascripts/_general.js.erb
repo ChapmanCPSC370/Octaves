@@ -32,10 +32,12 @@ $(function(){
   });
 
   $(document).on('click', '#chord-identification', function(){
-     $(".buttons").fadeOut();
-     //$( ".learn-chords" ).slideDown( "slow", function() {
-   // });
+     $("#chord-identification").fadeOut();
+     $("#play-chord-button").fadeOut();
+     $(".play-chord-id").fadeIn();
   });
+
+  
 
 
 
@@ -89,6 +91,13 @@ $(function(){
               playScale(minorPentatonic, rootNumber, delay);
               break;
       }
+  });
+
+  $(document).on('click', 'listen', function(){
+    var chord = ["majorTriad", "minorTriad", "dominant7th", "major7th"]
+    
+
+
   });
 
   $(document).on('click', '.play-chord', function(){
