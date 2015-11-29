@@ -10,7 +10,9 @@ $(function(){
   });
 
   $(document).on('click', '#chord', function(){
-    $(".buttons").fadeOut();
+    $(".first").fadeOut();
+    $( ".learn-chords" ).slideDown( "slow", function() {
+    });
   });
 
   $(document).on('click', '.back', function(){
@@ -23,6 +25,18 @@ $(function(){
     $(".play-scale").fadeIn();
     $(".buttons").fadeOut();
   });
+
+  $(document).on('click', '#play-chord-button', function(){
+    $(".play-chord").fadeIn();
+    $(".buttons").fadeOut();
+  });
+
+  $(document).on('click', '#chord-identification', function(){
+     $(".buttons").fadeOut();
+     //$( ".learn-chords" ).slideDown( "slow", function() {
+   // });
+  });
+
 
 
   var major = ['w', 'w', 'h', 'w', 'w', 'w', 'h'];
