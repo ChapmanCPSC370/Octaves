@@ -7,12 +7,12 @@
 <body>
   <button type="button" class="buttons first" id="scale"> Scales </button>
   <button type="button" class="buttons first" id="chord" style="left: 50%;"> Chords </button>
-<div class="learn-scales">
+
   <div class="scale-choices">
     <button type="button" class="buttons" id="play-scale-button"> Play Scales </button>
     <button type="button" class="buttons" id="scale-identification"style="left: 50%;"> Scale Identification </button>
   </div>
-  <div class="play-scale">
+  <div class="play-scales">
     <div>
       <select class="scale-choice form-control" data-value=''>
         <option class="scale" value="1C">C</option>
@@ -42,12 +42,11 @@
     <button class="play-scale"> Play Scale</button>
     <button class="back"> Back</button>
   </div> 
-</div>
 
-<div class="learn-chords">
   <div class="chord-choices">
     <button type="button" class="buttons" id="play-chord-button"> Play Chords </button>
     <button type="button" class="buttons" id="chord-identification" style="left: 50%;"> Chord Identification </button>
+    <div class="chord-choice-back pull-right">X</div>
   </div>
   <div class="play-chord-id" style="display: none;">
     <select class="chord-value" data-value=''>
@@ -98,9 +97,8 @@
         <option class="chord" value="major7th">Major 7th</option>      
       </select>
     </div>
-    <button class="play-chord"> Play Chord</button>
+    <button class="play-chord-button"> Play Chord</button>
   </div>
-</div>
 
   <div class="keyboard-background">
   	 <ul class="piano">

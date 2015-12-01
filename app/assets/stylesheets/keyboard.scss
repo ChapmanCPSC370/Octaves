@@ -1,7 +1,7 @@
 // Piano
 // --------------------------------------------------
 .buttons{
-  top: 10%;
+  top: 23%;
   background: none;
   border: thin solid #0077B3;
   height: 53px;
@@ -11,20 +11,36 @@
   color: #0077B3;
 }
 
+.chord-choices, .scale-choices{
+  display: none;
+}
+
+.play-chord-id, .play-chord, .play-scales{
+  display: none;
+  width: 400px; 
+  border: thin solid black;
+  position: absolute;
+  height: 150px;
+  top: 12%;
+  left: 27%;
+}
+
+
+
+
 
 .learn-scales, .learn-chords{
-  width: 472px;
-  height: 200px;
-  border: thin solid #eee;
-  display: none;
-  left: 29%;
-  position: absolute;
-
+    /*width: 686px;
+    height: 200px; 
+    border: thin solid #eee;
+    
+    left: 30%;
+    top: 10%;
+    position: absolute;*/
+    display: none;
   .scale-choices{
     .buttons{
       left: 0px;
-      margin-top: 50px;
-      margin-left: 20px;
     }
   }
 
@@ -45,17 +61,19 @@
       display: none;
   }
 
-  .play-chords{
+  .play-chords, .play-scale{
     display: none;
   }
 
-  .chord-choices{
-     .buttons{
-      left: 0px;
-      margin-top: 50px;
-      margin-left: 20px;
-    }
+
+
+  .chord-choice-back{
+    font-size: 18px;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
   }
+  
 }
 
 .keyboard-background{

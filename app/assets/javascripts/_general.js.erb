@@ -5,14 +5,12 @@ $(function(){
 
   $(document).on('click', '#scale', function(){
     $(".first").fadeOut();
-    $( ".learn-scales" ).slideDown( "slow", function() {
-    });
+    $(".scale-choices").fadeIn();
   });
 
   $(document).on('click', '#chord', function(){
     $(".first").fadeOut();
-    $( ".learn-chords" ).slideDown( "slow", function() {
-    });
+    $( ".chord-choices" ).fadeIn();
   });
 
   $(document).on('click', '.back', function(){
@@ -21,8 +19,14 @@ $(function(){
     $(".buttons").fadeIn();
   });
 
+  $(document).on('click', ".chord-choice-back", function(){
+    $("#chord-identification").fadeOut();
+    $("#play-chord-button").fadeOut();
+    $(".first").fadeIn();
+  });
+
   $(document).on('click', '#play-scale-button', function(){
-    $(".play-scale").fadeIn();
+    $(".play-scales").fadeIn();
     $(".buttons").fadeOut();
   });
 
@@ -32,9 +36,8 @@ $(function(){
   });
 
   $(document).on('click', '#chord-identification', function(){
-     $("#chord-identification").fadeOut();
-     $("#play-chord-button").fadeOut();
-     $(".play-chord-id").fadeIn();
+    $( ".chord-choices" ).fadeOut();
+    $(".play-chord-id").fadeIn();
   });
 
   
@@ -126,7 +129,7 @@ $(function(){
 
   });
 
-  $(document).on('click', '.play-chord', function(){
+  $(document).on('click', '.play-chord-button', function(){
     var rootNote = $('.chord-value').find(":selected").val();
     var rootNumber = $("[data-note= '" + rootNote + "']").data("key");
     var chord = $('.chord-choice').find(":selected").val();
