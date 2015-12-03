@@ -26,4 +26,6 @@ To run the application locally
 ``` $ rails server ```
 4. View the application at `http://localhost:3000/`
 
+##License 
 
+[MIT License](https://opensource.org/licenses/MIT)
