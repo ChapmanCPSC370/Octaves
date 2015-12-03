@@ -7,10 +7,13 @@
     <% if flash[:error] %>
       <div class="error"><%= flash[:error]%></div>
     <% end %>
+    <% if flash[:notice] %>
+      <div class="error"><%= flash[:notice]%></div>
+    <% end %>
 	</div>
 	<div class="header">
 		<h3 style="margin-left: 500px; postion: relative; margin-top: 47px;">Welcome to Octaves!</h3>
-    <% unless @current_user %>
+    <% unless current_user %>
   		<div class="top-block">
   			<button type="button" class="sign-up"> Sign Up </button>
   		    <button type="button" class="log-in"> Log In </button>

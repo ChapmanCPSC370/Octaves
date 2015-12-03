@@ -19,7 +19,24 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    log_out
+    @notice = "You have successfully logged out"
+    respond_to do |format|
+      format.js
+      format.html do
+        flash[:notice] = @notice
+        redirect_to root_path(notice: @notice)
+      end
+    end
+  end
+
   private
+    def log_out
+      session.delete(:user_id)
+      @current_user = nil
+    end
+
     def log_in(user)
       session[:user_id] = user.id
     end
