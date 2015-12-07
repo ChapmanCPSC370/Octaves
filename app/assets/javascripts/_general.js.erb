@@ -13,10 +13,17 @@ $(function(){
     $( ".chord-choices" ).fadeIn();
   });
 
-  $(document).on('click', '.back', function(){
+  $(document).on('click', '.scale-back', function(){
     $(this).parent().slideUp("slow", function() {
     });
-    $(".buttons").fadeIn();
+    $(".scale-button").fadeIn();
+  });
+
+  $(document).on('click', '.chord-back', function(){
+    $(this).parent().slideUp("slow", function() {
+    });
+    $("#play-chord-button").fadeIn();
+    $("#chord-identification").fadeIn();
   });
 
   $(document).on('click', ".chord-choice-back", function(){
@@ -39,10 +46,6 @@ $(function(){
     $( ".chord-choices" ).fadeOut();
     $(".play-chord-id").fadeIn();
   });
-
-  
-
-
 
   var major = ['w', 'w', 'h', 'w', 'w', 'w', 'h'];
   var naturalMinor = ['w', 'h', 'w', 'w', 'h', 'w', 'w'];
@@ -95,44 +98,47 @@ $(function(){
               break;
       }
   });
-
+  var correct = true
   $(document).on('click', '.listen', function(){
-    var chord = ["major", "minor", "dominant7th", "major7th"];
-    var root = ["1C", "1Cs", "1D", "1Ds", "1E", "1Fs", "1G", "1Gs", "2A", "2As", "2B"];
-    var randomChord = getRandomInt(0,4);
-    var randomRoot = getRandomInt(0, 11);
 
-    //console.log(chord[randomChord]);
-    
+    if(correct == true){
+      var chord = ["major", "minor", "dominant7th", "major7th"];
+      var root = ["1C", "1Cs", "1D", "1Ds", "1E", "1Fs", "1G", "1Gs", "2A", "2As", "2B"];
+      var randomChord = getRandomInt(0,4);
+      var randomRoot = getRandomInt(0, 11);
 
-    var rootNumber = $("[data-note= '" + root[randomRoot] + "']").data("key"); 
-    //console.log(rootDiv);
-    switch(chord[randomChord]){
-      case "major":
-        playChord(majorTriad, rootNumber, 0);
-        break;
-      case "minor":
-        playChord(minorTriad, rootNumber, 0);
-        break;
-      case "dominant7th":
-        playChord(dominant7th, rootNumber, 0);
-        break;
-       case "major7th":
-        playChord(major7th, rootNumber, 0);
-        break;
+      console.log(chord[randomChord]);
+      console.log(root[randomRoot]);
+      correct = false;
     }
+   
 
-   // playChord(chord[randomChord], rootDiv, 0);
-
-
-
-
+      var rootNumber = $("[data-note= '" + root[randomRoot] + "']").data("key"); 
+      switch(chord[randomChord]){
+        case "major":
+          playChord(majorTriad, rootNumber, 0);
+          break;
+        case "minor":
+          playChord(minorTriad, rootNumber, 0);
+          break;
+        case "dominant7th":
+          playChord(dominant7th, rootNumber, 0);
+          break;
+         case "major7th":
+          playChord(major7th, rootNumber, 0);
+          break;
+      }
+      
+    
   });
 
   $(document).on('click', '.play-chord-button', function(){
-    var rootNote = $('.chord-value').find(":selected").val();
+    var rootNote = $('#chord-value').find(":selected").val();
     var rootNumber = $("[data-note= '" + rootNote + "']").data("key");
-    var chord = $('.chord-choice').find(":selected").val();
+    var chord = $('#chord-choice').find(":selected").val();
+    console.log(chord);
+    console.log(rootNote);
+    console.log(rootNumber);
 
     switch(chord){
       case "major":

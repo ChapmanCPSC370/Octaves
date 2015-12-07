@@ -9,8 +9,8 @@
   <button type="button" class="buttons first" id="chord" style="left: 50%;"> Chords </button>
 
   <div class="scale-choices">
-    <button type="button" class="buttons" id="play-scale-button"> Play Scales </button>
-    <button type="button" class="buttons" id="scale-identification"style="left: 50%;"> Scale Identification </button>
+    <button type="button" class="scale-button buttons" id="play-scale-button"> Play Scales </button>
+    <button type="button" class="scale-button buttons" id="scale-identification"style="left: 50%;"> Scale Identification </button>
   </div>
   <div class="play-scales">
     <div>
@@ -40,7 +40,7 @@
       </select>
     </div>
     <button class="play-scale"> Play Scale</button>
-    <button class="back"> Back</button>
+    <button class="scale-back"> Back</button>
   </div> 
 
   <div class="chord-choices">
@@ -75,7 +75,7 @@
   </div>
   <div class='play-chord' style="display:none;">
     <div>
-      <select class="chord-value" data-value=''>
+      <select id="chord-value" data-value=''>
         <option class="chord-root" value="1C">C</option>
         <option class="chord-root" value="1Cs">C#</option>
         <option class="chord-root" value="1D">D</option>
@@ -90,7 +90,7 @@
         <option class="chord-root" value="2B">B</option>
       </select>
 
-      <select class="chord-choice">
+      <select id="chord-choice">
         <option class="chord" value="major">Major</option>
         <option class="chord" value="minor">Minor</option>
         <option class="chord" value="dominant7th">Dominant 7th</option>
@@ -98,6 +98,8 @@
       </select>
     </div>
     <button class="play-chord-button"> Play Chord</button>
+    <button class="chord-back"> Back</button>
+
   </div>
 
   <div class="keyboard-background">
