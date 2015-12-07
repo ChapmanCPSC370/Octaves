@@ -104,39 +104,43 @@ $(function(){
   var correctChord = ""
   var correctRoot = 0
 
+function listenChord(){
+  var chord = ["major", "minor", "dominant7th", "major7th"];
+  var root = ["1C", "1Cs", "1D", "1Ds", "1E", "1Fs", "1G", "1Gs", "2A", "2As", "2B"];
+  if(correct == true){
+   randomChord = getRandomInt(0,4);
+   randomRoot = getRandomInt(0, 11);
+  }
+
+  console.log(chord[randomChord]);
+  console.log(root[randomRoot]);
+  correct = false;
+
+  var rootNumber = $("[data-note= '" + root[randomRoot] + "']").data("key"); 
+  switch(chord[randomChord]){
+    case "major":
+      playChord(majorTriad, rootNumber, 0);
+      correctChord = "major"
+      break;
+    case "minor":
+      playChord(minorTriad, rootNumber, 0);
+      correctChord = "minor"
+      break;
+    case "dominant7th":
+      playChord(dominant7th, rootNumber, 0);
+      correctChord = "dominant7th"
+      break;
+     case "major7th":
+      playChord(major7th, rootNumber, 0);
+      correctChord = "major7th"
+      break;
+  }
+  correctRoot = rootNumber
+}
+
   // List to chord identification
   $(document).on('click', '.listen', function(){
-    var chord = ["major", "minor", "dominant7th", "major7th"];
-    var root = ["1C", "1Cs", "1D", "1Ds", "1E", "1Fs", "1G", "1Gs", "2A", "2As", "2B"];
-    if(correct == true){
-     randomChord = getRandomInt(0,4);
-     randomRoot = getRandomInt(0, 11);
-    }
-
-    console.log(chord[randomChord]);
-    console.log(root[randomRoot]);
-    correct = false;
-
-    var rootNumber = $("[data-note= '" + root[randomRoot] + "']").data("key"); 
-    switch(chord[randomChord]){
-      case "major":
-        playChord(majorTriad, rootNumber, 0);
-        correctChord = "major"
-        break;
-      case "minor":
-        playChord(minorTriad, rootNumber, 0);
-        correctChord = "minor"
-        break;
-      case "dominant7th":
-        playChord(dominant7th, rootNumber, 0);
-        correctChord = "dominant7th"
-        break;
-       case "major7th":
-        playChord(major7th, rootNumber, 0);
-        correctChord = "major7th"
-        break;
-    }
-    correctRoot = rootNumber
+    listenChord();
   });
 
   //Guess chord identification
@@ -149,9 +153,10 @@ $(function(){
     if(mode == correctChord && rootNumber == correctRoot){
       correct = true;
       console.log(correct);
-      playChord(correctChord, rootNumber, 0);
+      //playChord(correctChord, rootNumber, 0);
       $(".correct").slideDown( 300 ).delay( 800 ).fadeIn( 400 );
       $(".correct").slideUp( 300 ).delay( 800 ).fadeOut( 400 );
+      listenChord();
     } 
     else{
       $(".error").slideDown( 300 ).delay( 800 ).fadeIn( 400 );
