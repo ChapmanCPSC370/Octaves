@@ -21,11 +21,38 @@
   border: thin solid black;
   position: absolute;
   height: 150px;
-  top: 12%;
-  left: 27%;
+  top: 16%;
+  left: 33%;
 }
 
+.answer{
+  position: relative;
 
+
+  .correct{
+    .text{
+      left: 42%;
+      position: relative;
+    }
+    display: none;
+    background: #00EC00;
+    width: 100%;
+    color: white;
+    padding: 10px;
+  }
+
+  .error{
+    .text{
+      left: 41%;
+      position: relative;
+    }
+    display: none;
+    background: red;
+    width: 100%;
+    color: white;
+    padding: 10px;
+  }
+}
 
 
 

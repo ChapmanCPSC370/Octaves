@@ -5,6 +5,11 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
+  <div class="answer">
+      <div class="correct"> <div class="text">Correct</div></div>
+      <div class="error"><div class="text">Wrong! Try again!</div></div>
+  </div>
+  
   <button type="button" class="buttons first" id="scale"> Scales </button>
   <button type="button" class="buttons first" id="chord" style="left: 50%;"> Chords </button>
 
@@ -49,7 +54,7 @@
     <div class="chord-choice-back pull-right">X</div>
   </div>
   <div class="play-chord-id" style="display: none;">
-    <select class="chord-value" data-value=''>
+    <select class="guess-chord-value" data-value=''>
       <option class="chord-root" value="1C">C</option>
       <option class="chord-root" value="1Cs">C#</option>
       <option class="chord-root" value="1D">D</option>
@@ -64,13 +69,13 @@
       <option class="chord-root" value="2B">B</option>
     </select>
 
-    <select class="chord-choice">
+    <select class="guess-chord-choice">
       <option class="chord" value="major">Major</option>
       <option class="chord" value="minor">Minor</option>
       <option class="chord" value="dominant7th">Dominant 7th</option>
       <option class="chord" value="major7th">Major 7th</option>      
     </select>
-
+    <button class="guess-chord">Guess</button>
     <button type="button" class="buttons listen">Listen</button>
   </div>
   <div class='play-chord' style="display:none;">
@@ -101,7 +106,8 @@
     <button class="chord-back"> Back</button>
 
   </div>
-
+  
+  
   <div class="keyboard-background">
   	 <ul class="piano">
       <li class="key">
