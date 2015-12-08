@@ -47,6 +47,12 @@ $(function(){
     $(".play-chord-id").fadeIn();
   });
 
+  $(document).on('click', '#scale-identification', function(){
+    $( ".scale-choices" ).fadeOut();
+    $(".play-scale-id").fadeIn();
+  });
+
+
   var major = ['w', 'w', 'h', 'w', 'w', 'w', 'h'];
   var naturalMinor = ['w', 'h', 'w', 'w', 'h', 'w', 'w'];
   var harmonicMinor = ['w', 'h', 'w', 'w', 'h', 'w#', 'h'];
@@ -104,39 +110,93 @@ $(function(){
   var correctChord = ""
   var correctRoot = 0
 
-function listenChord(){
-  var chord = ["major", "minor", "dominant7th", "major7th"];
-  var root = ["1C", "1Cs", "1D", "1Ds", "1E", "1Fs", "1G", "1Gs", "2A", "2As", "2B"];
-  if(correct == true){
-   randomChord = getRandomInt(0,4);
-   randomRoot = getRandomInt(0, 11);
+  function listenChord(){
+    var chord = ["major", "minor", "dominant7th", "major7th"];
+    var root = ["1C", "1Cs", "1D", "1Ds", "1E", "1Fs", "1G", "1Gs", "2A", "2As", "2B"];
+    if(correct == true){
+     randomChord = getRandomInt(0,4);
+     randomRoot = getRandomInt(0, 11);
+    }
+    correct = false;
+
+    var rootNumber = $("[data-note= '" + root[randomRoot] + "']").data("key"); 
+    switch(chord[randomChord]){
+      case "major":
+        playChord(majorTriad, rootNumber, 0);
+        correctChord = "major"
+        break;
+      case "minor":
+        playChord(minorTriad, rootNumber, 0);
+        correctChord = "minor"
+        break;
+      case "dominant7th":
+        playChord(dominant7th, rootNumber, 0);
+        correctChord = "dominant7th"
+        break;
+       case "major7th":
+        playChord(major7th, rootNumber, 0);
+        correctChord = "major7th"
+        break;
+    }
+    correctRoot = rootNumber
   }
 
-  console.log(chord[randomChord]);
-  console.log(root[randomRoot]);
-  correct = false;
+  var correctScale = true
+  var randomScale = 0
+  var randomRootScale = 0
+  var correctScale = ""
+  var correctRootScale = 0
 
-  var rootNumber = $("[data-note= '" + root[randomRoot] + "']").data("key"); 
-  switch(chord[randomChord]){
-    case "major":
-      playChord(majorTriad, rootNumber, 0);
-      correctChord = "major"
-      break;
-    case "minor":
-      playChord(minorTriad, rootNumber, 0);
-      correctChord = "minor"
-      break;
-    case "dominant7th":
-      playChord(dominant7th, rootNumber, 0);
-      correctChord = "dominant7th"
-      break;
-     case "major7th":
-      playChord(major7th, rootNumber, 0);
-      correctChord = "major7th"
-      break;
+  function listenScale(){
+    var mode = ["major", "naturalMinor", "harmonicMinor", "melodicMinor", "minorPentatonicBlues", "majorPentatonicBlues", "majorPentatonic", "minorPentatonic"];
+    var root = ["1C", "1Cs", "1D", "1Ds", "1E", "1Fs", "1G", "1Gs", "2A", "2As", "2B"];
+    if(correctScale == true){
+     randomScale = getRandomInt(0,8);
+     randomRootScale = getRandomInt(0, 11);
+    }
+    correctScale = false;
+    var delay = 1;
+
+    console.log(randomScale);
+    console.log(randomRootScale);
+    var rootNumber = $("[data-note= '" + root[randomRootScale] + "']").data("key"); 
+    switch(mode[randomScale]){
+      case "major": 
+          playScale(major, rootNumber, delay);
+          break;
+      case "naturalMinor":
+          playScale(naturalMinor, rootNumber, delay);
+          break;
+      case "harmonicMinor":
+          playScale(harmonicMinor, rootNumber, delay);
+          break;
+      case "melodicMinor":
+          playScale(melodicMinor, rootNumber, delay);
+          break;
+      case "naturalMinor":
+          playScale(naturalMinor, rootNumber, delay);
+          break;
+      case "minorPentatonicBlues":
+          playScale(minorPentatonicBlues, rootNumber, delay);
+          break;
+      case "majorPentatonicBlues":
+          playScale(majorPentatonicBlues, root2Number, delay);
+          break;
+      case "majorPentatonic":
+          playScale(majorPentatonic, rootNumber, delay);
+          break;
+      case "minorPentatonic":
+          playScale(minorPentatonic, rootNumber, delay);
+          break;
+    }
+    correctRootScale = rootNumber
   }
-  correctRoot = rootNumber
-}
+
+
+
+  $(document).on('click', '.listen-scale', function(){
+    listenScale();
+  });
 
   // List to chord identification
   $(document).on('click', '.listen', function(){
@@ -152,7 +212,6 @@ function listenChord(){
 
     if(mode == correctChord && rootNumber == correctRoot){
       correct = true;
-      console.log(correct);
       //playChord(correctChord, rootNumber, 0);
       $(".correct").slideDown( 300 ).delay( 800 ).fadeIn( 400 );
       $(".correct").slideUp( 300 ).delay( 800 ).fadeOut( 400 );
@@ -162,19 +221,15 @@ function listenChord(){
       $(".error").slideDown( 300 ).delay( 800 ).fadeIn( 400 );
       $(".error").slideUp( 300 ).delay( 800 ).fadeOut( 400 );
     }
-    console.log("Guess = " + mode + " Correct chord = " + correctChord)
-    console.log("Root Number = " + rootNumber + " Correct root = " + correctRoot)
   });
+
+
 
 
   $(document).on('click', '.play-chord-button', function(){
     var rootNote = $('#chord-value').find(":selected").val();
     var rootNumber = $("[data-note= '" + rootNote + "']").data("key");
     var chord = $('#chord-choice').find(":selected").val();
-    console.log(chord);
-    console.log(rootNote);
-    console.log(rootNumber);
-
     switch(chord){
       case "major":
         playChord(majorTriad, rootNumber, 0);
@@ -195,7 +250,7 @@ function listenChord(){
     for (var i=0; i < chord.length; i++){
       var number = root;
       if(chord[i] == '1'){
-        play($("[data-key= '" + root + "']"), 1);
+        playNoteForChord($("[data-key= '" + root + "']"), 1);
       }
       else if(chord[i] == '3'){
         number += 4;
@@ -212,7 +267,7 @@ function listenChord(){
       else if(chord[i] == '7'){
         number += 11;
       }
-      play($("[data-key= '" + number + "']"), 1);
+      playNoteForChord($("[data-key= '" + number + "']"), 1);
     }
   }
 
@@ -237,16 +292,33 @@ function listenChord(){
         delay += 1;
     }
   }
+
   function play(div, delay){
-    setTimeout(function() { 
+    setTimeout(function() {
       var noteClick = $(div).attr('data-note');
       notes[noteClick].play();
       div.addClass('red');
-    }, delay*700);
+    }, delay * 700);
 
+    setTimeout(function(){
+      div.removeClass('red');
+   }, delay * 800);
+  }
+
+
+
+  function playNoteForChord(div, delay){
+    setTimeout(function() {
+      var noteClick = $(div).attr('data-note');
+      notes[noteClick].play();
+      div.addClass('red');
+    }, delay);
+
+
+    
    setTimeout(function(){
       div.removeClass('red');
-   }, delay* 800);
+   }, 1000);
   }
 
 	// Variables
