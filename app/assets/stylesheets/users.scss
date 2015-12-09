@@ -8,3 +8,21 @@
 h2{
 
 }
+
+h1{
+  left: 42%;
+  position: relative;
+}
+table{
+  position: relative;
+  left: 36%;
+  padding-top: 50px;
+
+  td{
+    font-size: 22px;
+  }
+  .score{
+    left: 200px;
+    position: relative;
+  }
+}

@@ -7,8 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if current_user %>
+<% session[:user] = @user %>
+<% if @user %>
   <%= button_to "Log out", logout_path, :method=>:delete, :class=>:destroy %>
+  <%= link_to "High Scores", users_path %>
 <% end %>
 
 <%= yield %>
