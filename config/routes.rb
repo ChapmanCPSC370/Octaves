@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   # Example of regular route:
     get 'keyboard/show' => 'keyboard#show', as: :keyboard
 
+
     get    'login'   => 'sessions#new'
     post   'login'   => 'sessions#create'
     delete 'logout'  => 'sessions#destroy'
