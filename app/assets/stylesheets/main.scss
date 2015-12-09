@@ -2,45 +2,53 @@
 	background-color: #1d2023;
 	.nav-bar{
 		width: 100%;
+    .error{
+      background: #c00;
+      color: white;
+      position: absolute;
+      padding: 10px;
+      left: 40%
+    }
 	}
 		h3{
 			color: #fff;
 			padding-bottom: 40px;
 		}
-	
+	.header{
 
-	.top-block{
-		/*background-image: url('http://publicdomainarchive.com/wp-content/uploads/2014/03/public-domain-images-free-stock-photos-high-quality-resolution-downloads-around-the-house-1-1000x666.jpg');*/
-		background-repeat: no-repeat;
-		height: 350px;
-		padding: 40px;
-		width: 100%;
-		margin-left: 12%;
-		color: #FFF;
-      
-      .sign-up, .log-in{
-        background: none;
-        border: thin solid #0077B3;
-        height: 53px;
-        width: 184px;
-        position: absolute;
-        left: 30%;
-        color: #0077B3;
+
+
+  	.top-block{
+  		background-repeat: no-repeat;
+  		height: 350px;
+  		padding: 40px;
+  		width: 100%;
+  		margin-left: 12%;
+  		color: #FFF;
         
-      }
-      .log-in{
-            left: 50%;
-      }
+        .sign-up, .log-in{
+          background: none;
+          border: thin solid #0077B3;
+          height: 53px;
+          width: 184px;
+          position: absolute;
+          left: 30%;
+          color: #0077B3;
+        }
+        .log-in{
+              left: 50%;
+        }
 
-		
-	}
+  		
+  	}
+  }
 .welcome{
   padding-top: 40px;
   display: block;
   width: 400px;
   color: white;
 }
-#sign-in-popup{
+#sign-in-popup, #log-in-popup{
 		height: 400px;
 		width: 450px;
 		background-color: #FFF;

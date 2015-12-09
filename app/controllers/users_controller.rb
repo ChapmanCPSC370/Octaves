@@ -31,7 +31,7 @@ class UsersController < ApplicationController
         redirect_to user_path(@user)
         
       else
-        espond_to do |format|
+        respond_to do |format|
 
           format.html { render :new }
           format.json { render json: @user.errors, status: :unprocessable_entity }

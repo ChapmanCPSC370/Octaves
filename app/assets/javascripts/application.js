@@ -1,5 +1,10 @@
 //= require jquery
+//= require _general
+//= require howler
+//= require app_assets
+//= require _zepto.min.js
 //= require fancybox
+//= require jquery-ui
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
