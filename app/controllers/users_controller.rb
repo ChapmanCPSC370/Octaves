@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.created_at = Time.now
       if @user.save
-        redirect_to user_path(@user)
+        redirect_to root_path
         
       else
         respond_to do |format|

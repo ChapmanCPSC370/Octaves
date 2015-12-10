@@ -11,6 +11,7 @@
       <div class="error"><%= flash[:notice]%></div>
     <% end %>
 	</div>
+  <% session[:user] = current_user %>
 	<div class="header">
 		<h3 style="margin-left: 500px; postion: relative; margin-top: 47px;">Welcome to Octaves!</h3>
     <% unless current_user %>
