@@ -19,7 +19,6 @@
   </div>
   <div class="play-scales">
     <button class="scale-back btn btn-default"> Back</button>
-    <div> High Score <span> <%= %> </span></div>
     <div style="left: 29%; position: relative;">
       <%= render "keyboard/scale_selection" %>
     </div>
@@ -30,6 +29,7 @@
 
   <div class="play-scale-id" style="display: none;">
     <button class="scale-back btn btn-default"> Back</button>
+    <div style="float: right;"> High Score <span> <%= @user.high_score %> </span></div>
     <div style="left: 29%; position: relative;">
       <%= render "keyboard/scale_selection" %>
     </div>
@@ -46,6 +46,7 @@
   </div>
   <div class="play-chord-id" style="display: none;">
     <button class="chord-back btn btn-default"> Back</button>
+    <div style="float: right;"> High Score <span> <%= @user.high_score %> </span></div>
     <div style="left: 29%; position: relative;">
       <%= render "keyboard/chord_selection" %>
       <div style="position: relative; left: 38%; top: 35%;">
