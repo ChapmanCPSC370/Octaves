@@ -226,13 +226,12 @@ $(function(){
   //Guess chord identification
   $(document).on('click', '.guess-chord', function(){
     
-    var rootNote = $('.guess-chord-value').find(":selected").val();
+    var rootNote = $('.play-chord-id > .chord-root-selection').find(":selected").val();
     var rootNumber = $("[data-note= '" + rootNote + "']").data("key");
-    var mode = $('.guess-chord-choice').find(":selected").val();
+    var mode = $('.play-chord-id > .chord-selection').find(":selected").val();
 
     if(mode == correctChord && rootNumber == correctRoot){
       correct = true;
-      //playChord(correctChord, rootNumber, 0);
       $(".correct").slideDown( 300 ).delay( 800 ).fadeIn( 400 );
       $(".correct").slideUp( 300 ).delay( 800 ).fadeOut( 400 );
       listenChord();
@@ -242,8 +241,6 @@ $(function(){
       $(".error").slideUp( 300 ).delay( 800 ).fadeOut( 400 );
     }
   });
-
-
 
 
   $(document).on('click', '.play-chord-button', function(){

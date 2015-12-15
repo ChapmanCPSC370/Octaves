@@ -17,12 +17,14 @@
 
 .play-chord-id, .play-chord, .play-scales{
   display: none;
-  width: 400px; 
-  border: thin solid black;
+  width: 500px; 
+  border: thin solid #eee;
   position: absolute;
-  height: 150px;
+  height: 200px;
   top: 16%;
   left: 33%;
+  box-shadow: -2px 2px 7px 1px #aaa;
+  border-radius: 2px;
 }
 
 .answer{
@@ -57,14 +59,7 @@
 
 
 .learn-scales, .learn-chords{
-    /*width: 686px;
-    height: 200px; 
-    border: thin solid #eee;
-    
-    left: 30%;
-    top: 10%;
-    position: absolute;*/
-    display: none;
+  display: none;
   .scale-choices{
     .buttons{
       left: 0px;

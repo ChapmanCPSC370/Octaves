@@ -18,7 +18,7 @@
     <button type="button" class="scale-button buttons" id="scale-identification"style="left: 50%;"> Scale Identification </button>
   </div>
   <div class="play-scales">
-    <div>
+    <div style="width: 200px;">
       <select class="scale-choice form-control" data-value=''>
         <option class="scale" value="1C">C</option>
         <option class="scale" value="1Cs">C#</option>
@@ -54,53 +54,13 @@
     <div class="chord-choice-back pull-right">X</div>
   </div>
   <div class="play-chord-id" style="display: none;">
-    <select class="guess-chord-value" data-value=''>
-      <option class="chord-root" value="1C">C</option>
-      <option class="chord-root" value="1Cs">C#</option>
-      <option class="chord-root" value="1D">D</option>
-      <option class="chord-root" value="1Ds">D#</option>
-      <option class="chord-root" value="1E">E</option>
-      <option class="chord-root" value="1F">F</option>
-      <option class="chord-root" value="1Fs">F#</option>
-      <option class="chord-root" value="1G">G</option>
-      <option class="chord-root" value="1Gs">G#</option>
-      <option class="chord-root" value="2A">A</option>
-      <option class="chord-root" value="2As">A#</option>
-      <option class="chord-root" value="2B">B</option>
-    </select>
-
-    <select class="guess-chord-choice">
-      <option class="chord" value="major">Major</option>
-      <option class="chord" value="minor">Minor</option>
-      <option class="chord" value="dominant7th">Dominant 7th</option>
-      <option class="chord" value="major7th">Major 7th</option>      
-    </select>
+      <%= render "keyboard/chord_selection" %>
     <button class="guess-chord">Guess</button>
     <button type="button" class="buttons listen">Listen</button>
   </div>
   <div class='play-chord' style="display:none;">
-    <div>
-      <select id="chord-value" data-value=''>
-        <option class="chord-root" value="1C">C</option>
-        <option class="chord-root" value="1Cs">C#</option>
-        <option class="chord-root" value="1D">D</option>
-        <option class="chord-root" value="1Ds">D#</option>
-        <option class="chord-root" value="1E">E</option>
-        <option class="chord-root" value="1F">F</option>
-        <option class="chord-root" value="1Fs">F#</option>
-        <option class="chord-root" value="1G">G</option>
-        <option class="chord-root" value="1Gs">G#</option>
-        <option class="chord-root" value="2A">A</option>
-        <option class="chord-root" value="2As">A#</option>
-        <option class="chord-root" value="2B">B</option>
-      </select>
-
-      <select id="chord-choice">
-        <option class="chord" value="major">Major</option>
-        <option class="chord" value="minor">Minor</option>
-        <option class="chord" value="dominant7th">Dominant 7th</option>
-        <option class="chord" value="major7th">Major 7th</option>      
-      </select>
+    <div style="width: 200px;">
+      <%= render "keyboard/chord_selection" %>
     </div>
     <button class="play-chord-button"> Play Chord</button>
     <button class="chord-back"> Back</button>
