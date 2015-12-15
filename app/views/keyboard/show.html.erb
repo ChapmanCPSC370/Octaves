@@ -18,16 +18,25 @@
     <button type="button" class="scale-button buttons" id="scale-identification"style="left: 50%;"> Scale Identification </button>
   </div>
   <div class="play-scales">
-    <%= render "keyboard/scale_selection" %>
-
-    <button class="play-scale"> Play Scale</button>
-    <button class="scale-back"> Back</button>
+    <button class="scale-back btn btn-default"> Back</button>
+    <div> High Score <span> <%= %> </span></div>
+    <div style="left: 29%; position: relative;">
+      <%= render "keyboard/scale_selection" %>
+    </div>
+    <div style="position: relative; left: 38%; top: 35%;">
+      <button class="play-scale btn btn-primary active"> Play Scale</button>
+    </div>
   </div> 
 
   <div class="play-scale-id" style="display: none;">
+    <button class="scale-back btn btn-default"> Back</button>
+    <div style="left: 29%; position: relative;">
       <%= render "keyboard/scale_selection" %>
-    <button class="guess-scale">Guess</button>
-    <button type="button" class="buttons listen-scale">Listen</button>
+    </div>
+    <div style="position: relative; left: 38%; top: 35%;">
+      <button class="guess-scale btn btn-primary active">Guess</button>
+      <button type="button" class="btn listen-scale">Listen</button>
+    </div>
   </div>
 
   <div class="chord-choices">
@@ -36,14 +45,18 @@
     <div class="chord-choice-back pull-right">X</div>
   </div>
   <div class="play-chord-id" style="display: none;">
+    <button class="chord-back btn btn-default"> Back</button>
+    <div style="left: 29%; position: relative;">
       <%= render "keyboard/chord_selection" %>
-    <button class="guess-chord">Guess</button>
-    <button type="button" class="buttons listen">Listen</button>
+      <div style="position: relative; left: 38%; top: 35%;">
+        <button class="guess-chord btn btn-primary active">Guess</button>
+        <button type="button" class="btn listen">Listen</button>
+      </div>
+    </div>
   </div>
   <div class='play-chord' style="display:none;">
     <%= render "keyboard/chord_selection" %>
-    <button class="play-chord-button"> Play Chord</button>
-    <button class="chord-back"> Back</button>
+    <button class="play-chord-button btn btn-primary active"> Play Chord</button>  
   </div>
 
   <div class="keyboard-background">

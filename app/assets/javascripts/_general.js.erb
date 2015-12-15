@@ -43,12 +43,12 @@ $(function(){
   });
 
   $(document).on('click', '#chord-identification', function(){
-    $( ".chord-choices" ).fadeOut();
+    $(".buttons").fadeOut();
     $(".play-chord-id").fadeIn();
   });
 
   $(document).on('click', '#scale-identification', function(){
-    $( ".scale-choices" ).fadeOut();
+    $(".buttons").fadeOut();
     $(".play-scale-id").fadeIn();
   });
 
@@ -68,9 +68,9 @@ $(function(){
   var major7th = ['1', '3', '5', '7'];
 
   $(document).on('click', '.play-scale', function(){
-      var rootNote = $('.play-scales > .scale-root-selection').find(":selected").val();
+      var rootNote = $('.play-scales .scale-root-selection').find(":selected").val();
       var rootNumber = $("[data-note= '" + rootNote + "']").data("key");
-      var mode = $('.play-scales > .scale-selection').find(":selected").val();
+      var mode = $('.play-scales .scale-selection').find(":selected").val();
       var delay = 1;
 
       switch(mode){
@@ -156,8 +156,6 @@ $(function(){
     correct2 = false;
     var delay = 1;
 
-  //  console.log(randomScale);
-    //console.log(randomRootScale);
     var rootNumber = $("[data-note= '" + root[randomRootScale] + "']").data("key"); 
     switch(mode[randomScale]){
       case "major": 
@@ -224,9 +222,9 @@ $(function(){
   //Guess chord identification
   $(document).on('click', '.guess-scale', function(){
     
-    var rootNote = $('.play-scale-id > .scale-root-selection').find(":selected").val();
+    var rootNote = $('.play-scale-id .scale-root-selection').find(":selected").val();
     var rootNumber = $("[data-note= '" + rootNote + "']").data("key");
-    var mode = $('.play-scale-id > .scale-selection').find(":selected").val();
+    var mode = $('.play-scale-id .scale-selection').find(":selected").val();
 
     console.log("root " + rootNumber + " = " + correctRootScale );
     console.log("mode " + mode + " = " + correctScale);
@@ -246,9 +244,9 @@ $(function(){
   //Guess chord identification
   $(document).on('click', '.guess-chord', function(){
     
-    var rootNote = $('.play-chord-id > .chord-root-selection').find(":selected").val();
+    var rootNote = $('.play-chord-id .chord-root-selection').find(":selected").val();
     var rootNumber = $("[data-note= '" + rootNote + "']").data("key");
-    var mode = $('.play-chord-id > .chord-selection').find(":selected").val();
+    var mode = $('.play-chord-id .chord-selection').find(":selected").val();
 
     if(mode == correctChord && rootNumber == correctRoot){
       correct = true;
@@ -264,9 +262,9 @@ $(function(){
 
 
   $(document).on('click', '.play-chord-button', function(){
-    var rootNote = $('.play-chord > .chord-root-selection').find(":selected").val();
+    var rootNote = $('.play-chord .chord-root-selection').find(":selected").val();
     var rootNumber = $("[data-note= '" + rootNote + "']").data("key");
-    var chord = $('.play-chord > .chord-selection').find(":selected").val();
+    var chord = $('.play-chord .chord-selection').find(":selected").val();
     switch(chord){
       case "major":
         playChord(majorTriad, rootNumber, 0);
