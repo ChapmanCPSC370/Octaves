@@ -18,7 +18,7 @@
     </div>
     <div>
       <ul class="nav navbar-nav">
-        <% if current_page?(action: "index") %>
+        <% if current_page?(controller: "users", action: "index") %>
           <li><%= link_to "Keyboard", keyboard_path(id: @user.id) %></li>
           <li class="active"><%= link_to "High Scores", users_path(id: @user.id)%></li> 
         <% else %>
