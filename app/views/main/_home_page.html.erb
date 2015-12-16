@@ -4,7 +4,6 @@
  </head>
 <body class="body">
 	<div class="nav-bar">
-		<%#= #link_to("Keyboard", keyboard_path) %>
     <% if flash[:error] %>
       <div class="error"><%= flash[:error]%></div>
     <% end %>
@@ -19,7 +18,7 @@
             <p>Octaves is an interactive keyboard for learning basic music theory. By using Octaves you can learn scales, chords, and practice ear training.</p>
         </div>
     </div>
-    </div>
+  </div>
   <% session[:user] = current_user %>
 	<div class="header">
      
@@ -46,7 +45,7 @@
 
   <div id="log-in-popup">
     <div>
-      <h2>Sign up</h2>
+      <h2>Log In</h2>
           <div class="close-popup">X</div>
         </div> 
 

@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
 <% session[:user] = @user %>
@@ -16,8 +18,13 @@
     </div>
     <div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><%= link_to "High Scores", users_path %></li> 
+        <% if current_page?(action: "index") %>
+          <li><%= link_to "Keyboard", keyboard_path(id: @user.id) %></li>
+          <li class="active"><%= link_to "High Scores", users_path(id: @user.id)%></li> 
+        <% else %>
+          <li class="active"><%= link_to "Keyboard", keyboard_path(id: @user.id) %></li>
+          <li><%= link_to "High Scores", users_path(id: @user.id)%></li>
+        <% end %>
         <li><%= link_to "Log out", logout_path, :method=>:delete, :class=>:destroy %></li> 
       </ul>
     </div>

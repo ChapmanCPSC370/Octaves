@@ -1,8 +1,5 @@
 <html>
 <head>  
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-</head>
 <body>
   <div class="answer">
       <div class="correct"> <div class="text">Correct</div></div>
@@ -29,12 +26,12 @@
   <div class="play-scale-id" style="display: none;">
     <button class="scale-back btn btn-default"> Back</button>
     <div style="float: right; width: 131px;"> <span> Current Score <span class="current-score" data-scale="0">0</span></span>  <span class="high-score" data-id="<%= @user.id %>"data-scale="<%= @user.scale_high_score %>" data-url="<%= high_score_path %>"> High Score <%= @user.scale_high_score %> </span></div>
-    <div style="left: 29%; position: relative;">
+    <div style="left: 29%; position: relative; top: 10%;">
       <%= render "keyboard/scale_selection" %>
     </div>
     <div style="position: relative; left: 38%; top: 35%;">
-      <button class="guess-scale btn btn-primary active">Guess</button>
       <button type="button" class="btn listen-scale">Listen</button>
+      <button class="guess-scale btn btn-primary active">Guess</button> 
     </div>
   </div>
 
@@ -49,8 +46,8 @@
     <div style="left: 29%; position: relative;">
       <%= render "keyboard/chord_selection" %>
       <div style="position: relative; left: 4%; margin-top: 13%;">
-        <button class="guess-chord btn btn-primary active">Guess</button>
         <button type="button" class="btn listen">Listen</button>
+        <button class="guess-chord btn btn-primary active">Guess</button>
       </div>
     </div>
   </div>
@@ -67,56 +64,56 @@
   <div class="keyboard-background">
   	 <ul class="piano">
       <li class="key">
-        <div class="white-key" data-key="0" data-note="1C"></div>
-        <div class="black-key" data-key="1" data-note="1Cs"></div>
+        <div class="white-key" data-key="0" data-note="1C" data-key-down="20"></div>
+        <div class="black-key" data-key="1" data-note="1Cs" data-key-down="81"></div>
       </li>
       <li class="key">
-        <div class="white-key" data-key="2" data-note="1D"></div>
-        <div class="black-key" data-key="3" data-note="1Ds"></div>
+        <div class="white-key" data-key="2" data-note="1D" data-key-down="65"></div>
+        <div class="black-key" data-key="3" data-note="1Ds" data-key-down="87"></div>
       </li>
       <li class="key">
-        <div class="white-key" data-key="4" data-note="1E"></div>
+        <div class="white-key" data-key="4" data-note="1E" data-key-down="83"></div>
       </li>
       <li class="key">
-        <div class="white-key" data-key="5" data-note="1F"></div>
-        <div class="black-key" data-key="6" data-note="1Fs"></div>
+        <div class="white-key" data-key="5" data-note="1F" data-key-down="68"></div>
+        <div class="black-key" data-key="6" data-note="1Fs" data-key-down="82"></div>
       </li>
       <li class="key">
-        <div class="white-key" data-key="7" data-note="1G"></div>
-        <div class="black-key" data-key="8" data-note="1Gs"></div>
+        <div class="white-key" data-key="7" data-note="1G" data-key-down="70"></div>
+        <div class="black-key" data-key="8" data-note="1Gs" data-key-down="84"></div>
       </li>
       <li class="key">
-        <div class="white-key" data-key="9" data-note="2A"></div>
-        <div class="black-key" data-key="10" data-note="2As"></div>
+        <div class="white-key" data-key="9" data-note="2A" data-key-down="71"></div>
+        <div class="black-key" data-key="10" data-note="2As" data-key-down="89"></div>
       </li>
       <li class="key">
-        <div class="white-key" data-key="11" data-note="2B"></div>
+        <div class="white-key" data-key="11" data-note="2B" data-key-down="72"></div>
       </li>
       <li class="key">
-        <div class="white-key" data-key="12" data-note="2C"></div>
-        <div class="black-key" data-key="13" data-note="2Cs"></div>
+        <div class="white-key" data-key="12" data-note="2C" data-key-down="74"></div>
+        <div class="black-key" data-key="13" data-note="2Cs" data-key-down="73"></div>
       </li>
       <li class="key">
-        <div class="white-key" data-key="14" data-note="2D"></div>
-        <div class="black-key" data-key="15" data-note="2Ds"></div>
+        <div class="white-key" data-key="14" data-note="2D" data-key-down="75"></div>
+        <div class="black-key" data-key="15" data-note="2Ds" data-key-down="79"></div>
       </li>
       <li class="key">
-        <div class="white-key" data-key="16" data-note="2E"></div>
+        <div class="white-key" data-key="16" data-note="2E" data-key-down="76"></div>
       </li>
       <li class="key">
-        <div class="white-key" data-key="17" data-note="2F"></div>
-        <div class="black-key" data-key="18" data-note="2Fs"></div>
+        <div class="white-key" data-key="17" data-note="2F" data-key-down="186"></div>
+        <div class="black-key" data-key="18" data-note="2Fs" data-key-down="219"></div>
       </li>
       <li class="key">
-        <div class="white-key" data-key="19" data-note="2G"></div>
-        <div class="black-key" data-key="20" data-note="2Gs"></div>
+        <div class="white-key" data-key="19" data-note="2G" data-key-down="222"></div>
+        <div class="black-key" data-key="20" data-note="2Gs" data-key-down="221"></div>
       </li>
       <li class="key">
-        <div class="white-key" data-key="21" data-note="3A"></div>
-        <div class="black-key" data-key="22" data-note="3As"></div>
+        <div class="white-key" data-key="21" data-note="3A" data-key-down="220"></div>
+        <div class="black-key" data-key="22" data-note="3As" data-key-down="13"></div>
       </li>
       <li class="key">
-        <div class="white-key" data-key="23" data-note="3B"></div>
+        <div class="white-key" data-key="23" data-note="3B" data-key-down="37"></div>
       </li>
     </ul>
   </div>

@@ -1,5 +1,5 @@
 //= require jquery
-//= require _general
+//= require _keyboard
 //= require howler
 //= require app_assets
 //= require _zepto.min.js
