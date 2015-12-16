@@ -6,7 +6,7 @@ class KeyboardController < ApplicationController
    # @current_user.first_name
   # user = session[:user]
   # user.first_name
-    Rails::logger::info "DEBUG: #{@user}"
+    #Rails::logger::info "DEBUG: #{@user}"
    # Rails::logger::info "DEBUG: #{current_user}"
 	end
 end

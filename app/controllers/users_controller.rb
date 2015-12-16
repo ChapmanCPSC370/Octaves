@@ -20,6 +20,17 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def new_high_score
+    user = User.find_by(id: params[:id])
+    if high_score = params[:scale_high_score]
+      user.update_attribute(:scale_high_score, high_score)
+    else
+      high_score = params[:chord_high_score]
+      user.update_attribute(:chord_high_score, high_score)
+    end
+    render :nothing => true
+  end
+
   # GET /users/1/edit
   def edit
   end

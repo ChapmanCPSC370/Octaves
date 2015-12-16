@@ -218,18 +218,35 @@ $(function(){
   $(document).on('click', '.listen', function(){
     listenChord();
   });
-
+  //var currentScaleScore = 0; 
   //Guess chord identification
   $(document).on('click', '.guess-scale', function(){
     
     var rootNote = $('.play-scale-id .scale-root-selection').find(":selected").val();
     var rootNumber = $("[data-note= '" + rootNote + "']").data("key");
     var mode = $('.play-scale-id .scale-selection').find(":selected").val();
+    var currentScaleScore = $(".current-score").data("scale");
+    var highScaleScore = $(".high-score").data("scale");
+    var url = $(".high-score").data("url");
+    var id = $(".high-score").data("id");
 
     console.log("root " + rootNumber + " = " + correctRootScale );
     console.log("mode " + mode + " = " + correctScale);
     if(mode == correctScale && rootNumber == correctRootScale){
       correct2 = true;
+      currentScaleScore += 1;
+      $(".current-score").data("scale", currentScaleScore);
+      $(".current-score").html(currentScaleScore);
+
+      if(currentScaleScore > highScaleScore){
+        $.ajax({ url: url,
+                 type: "GET",
+                dataType: "script",
+                data: {scale_high_score: currentScaleScore,
+                       id: id}
+        });
+      }
+
       //playChord(correctChord, rootNumber, 0);
       $(".correct").slideDown( 300 ).delay( 800 ).fadeIn( 400 );
       $(".correct").slideUp( 300 ).delay( 800 ).fadeOut( 400 );
@@ -238,7 +255,11 @@ $(function(){
     else{
       $(".error").slideDown( 300 ).delay( 800 ).fadeIn( 400 );
       $(".error").slideUp( 300 ).delay( 800 ).fadeOut( 400 );
+      $(".current-score").data("scale", 0);
+      $(".current-score").html("0");
     }
+    console.log(currentScaleScore);
+
   });
 
   //Guess chord identification
@@ -247,16 +268,36 @@ $(function(){
     var rootNote = $('.play-chord-id .chord-root-selection').find(":selected").val();
     var rootNumber = $("[data-note= '" + rootNote + "']").data("key");
     var mode = $('.play-chord-id .chord-selection').find(":selected").val();
+    var currentChordScore = $(".current-score-chord").data("chord");
+    var highChordScore = $(".high-score-chord").data("chord");
+    var url = $(".high-score-chord").data("url");
+    var id = $(".high-score-chord").data("id");
 
     if(mode == correctChord && rootNumber == correctRoot){
       correct = true;
       $(".correct").slideDown( 300 ).delay( 800 ).fadeIn( 400 );
       $(".correct").slideUp( 300 ).delay( 800 ).fadeOut( 400 );
       listenChord();
+      currentChordScore += 1;
+      $(".current-score-chord").data("chord", currentChordScore);
+      $(".current-score-chord").html(currentChordScore);
+
+      console.log(currentChordScore + " =" + highChordScore);
+
+      if(currentChordScore > highChordScore){
+        $.ajax({ url: url,
+                 type: "GET",
+                 dataType: "script",
+                 data: {chord_high_score: currentChordScore,
+                       id: id}
+        });
+      }
     } 
     else{
       $(".error").slideDown( 300 ).delay( 800 ).fadeIn( 400 );
       $(".error").slideUp( 300 ).delay( 800 ).fadeOut( 400 );
+      $(".current-score-chord").data("chord", 0);
+      $(".current-score-chord").html("0");
     }
   });
 

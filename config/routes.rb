@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     get 'keyboard/show' => 'keyboard#show', as: :keyboard
 
 
+    get    'high_score' => 'users#new_high_score'
     get    'login'   => 'sessions#new'
     post   'login'   => 'sessions#create'
     delete 'logout'  => 'sessions#destroy'

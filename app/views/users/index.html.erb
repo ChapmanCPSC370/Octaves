@@ -14,7 +14,9 @@
       <tr>
         <td><%= index + 1 %>.</td>
         <td><%= user.username %></td>
-        <td class="score"><%= user.high_score %></td>
+        <td class="score" style="padding-left: 10px;"> Chord High Score</td>
+        <div class="score"><%= user.chord_high_score %></div>
+        <td class="score" style="padding-left: 10px;"> Scale High Score</td>
       </tr>
     <% end %>
   </tbody>

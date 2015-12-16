@@ -23,7 +23,8 @@ ActiveRecord::Schema.define(version: 20151209031538) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"
-    t.integer  "high_score",      default: 0
+    t.integer  "chord_high_score", default: 0
+    t.integer  "scale_high_score", default: 0
   end
 
 end
