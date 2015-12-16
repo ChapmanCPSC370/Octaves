@@ -1,5 +1,6 @@
-<html>
+<html class="full">
 <head> 
+  <link href="css/the-big-picture.css" rel="stylesheet">
  </head>
 <body class="body">
 	<div class="nav-bar">
@@ -11,9 +12,17 @@
       <div class="error"><%= flash[:notice]%></div>
     <% end %>
 	</div>
+  <div class="container">
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <h1>Octaves</h1>
+            <p>Octaves is an interactive keyboard for learning basic music theory. By using Octaves you can learn scales, chords, and practice ear training.</p>
+        </div>
+    </div>
+    </div>
   <% session[:user] = current_user %>
 	<div class="header">
-		<h3 style="margin-left: 500px; postion: relative; margin-top: 47px;">Welcome to Octaves!</h3>
+     
     <% unless current_user %>
   		<div class="top-block">
   			<button type="button" class="sign-up"> Sign Up </button>
@@ -22,7 +31,7 @@
     <% end %>
 	</div>
     <div class="welcome">
-      Octaves is an interactive keyboard for learning basic music theory. By using Octaves you can learn scales, chords, basic songs, and practice ear training and sight-reading.
+      
     </div>
 	<div id="sign-in-popup">
 		<div>

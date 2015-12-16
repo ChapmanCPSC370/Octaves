@@ -1,13 +1,14 @@
 .body{
-	background-color: #1d2023;
 	.nav-bar{
 		width: 100%;
     .error{
       background: #c00;
       color: white;
-      position: absolute;
+      position: fixed;
       padding: 10px;
-      left: 40%
+      top: 1%;
+      left: 39%;
+      border-radius: 4px;
     }
 	}
 		h3{
@@ -16,21 +17,20 @@
 		}
 	.header{
   	.top-block{
-  		background-repeat: no-repeat;
-  		height: 350px;
-  		padding: 40px;
-  		width: 100%;
-  		margin-left: 12%;
-  		color: #FFF;
-        
+      height: 103px;
+      padding: 75px;
+      width: 100%;
+      color: #FFF;   
+       background: rgba(17, 17, 17, 0.44);
         .sign-up, .log-in{
           background: none;
-          border: thin solid #0077B3;
+          border: thin solid #FFF;
           height: 53px;
           width: 184px;
-          position: absolute;
+          position: fixed;
           left: 30%;
-          color: #0077B3;
+          color: #FFF;
+          margin-top: 20px;
         }
         .log-in{
               left: 50%;
