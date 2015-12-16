@@ -10,6 +10,10 @@ body {
 	background: none;
 }
 
+.container{
+  margin-left: 0px;
+}
+
 .full {
   background: url(https://4.bp.blogspot.com/-hmU2JgOX4U8/VLo3vnVP0PI/AAAAAAABa_0/g4ITGZwx-8I/s0/Vintage%2BPiano_UHD.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;

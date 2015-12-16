@@ -5,24 +5,28 @@
 		}
 }
 
-h2{
-
-}
-
 h1{
   left: 42%;
   position: relative;
 }
-table{
-  position: relative;
-  left: 36%;
-  padding-top: 50px;
 
-  td{
-    font-size: 22px;
+.user{
+  position: relative; 
+  display: inline-block;
+  margin-bottom: 30px;
+
+  div{
+    display: inline-block;
   }
-  .score{
-    left: 200px;
-    position: relative;
-  }
+}
+.score{
+  float: right;
+  position: relative;
+  padding-left: 10px;
+    /* margin: 10px; */
+  margin-left: 174px;
+}
+.score1{
+  float: right;
+  position: relative;
 }

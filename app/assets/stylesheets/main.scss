@@ -1,4 +1,5 @@
 .body{
+  background-color: none;
 	.nav-bar{
 		width: 100%;
     .error{
@@ -18,7 +19,7 @@
   .container{
     h1{
       position: relative;
-      font-size: 70px;
+      font-size: 107px;
       color: white;
       font-weight: 100;
       left: 0%;
@@ -26,29 +27,30 @@
     p{
       color: white;
       font-size: 20px;
+      width: 600px;
     }
   }
 	.header{
   	.top-block{
       height: 103px;
       padding: 75px;
+      position: absolute;
+      width: 100%;
       color: #FFF;   
        background: rgba(17, 17, 17, 0.44);
         .sign-up, .log-in{
+          position: relative;
           background: none;
           border: thin solid #FFF;
           height: 53px;
           width: 184px;
-          position: fixed;
           left: 30%;
           color: #FFF;
-          margin-top: 20px;
+          top: 51%;
         }
         .log-in{
               left: 50%;
-        }
-
-  		
+        }	
   	}
   }
 .welcome{
@@ -142,7 +144,6 @@
         margin-left: 75px;
 	    }
 	  }
-
-
 	}
 }
+

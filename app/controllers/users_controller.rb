@@ -44,14 +44,12 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.created_at = Time.now
       if @user.save
-        redirect_to root_path
+        redirect_to keyboard_path(:id => @user.id)
         
       else
-        respond_to do |format|
-
-          format.html { render :new }
-          format.json { render json: @user.errors, status: :unprocessable_entity }
-        end
+        @error = "Invalid password or username"
+        flash[:error] = @error
+        redirect_to root_path(error: @error)
       end
   end
 
