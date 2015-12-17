@@ -29,7 +29,3 @@ To run the application locally
 ##License 
 
 [MIT License](https://opensource.org/licenses/MIT)
-
->>>>>>> development
-
-[MIT License](https://opensource.org/licenses/MIT)
